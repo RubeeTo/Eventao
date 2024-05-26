@@ -1,3 +1,4 @@
+// LoginActivity.kt
 package com.example.app3
 
 import android.content.Intent
@@ -7,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class LoginActivity : AppCompatActivity() {
 
@@ -31,15 +33,25 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            val intent = Intent(this, MainActivity::class.java)
-                            startActivity(intent)
-                            finish()
+                            val currentUser = auth.currentUser
+                            if (currentUser != null) {
+                                val database = FirebaseDatabase.getInstance().reference
+                                val userRef = database.child("users").child(currentUser.uid)
+                                userRef.get().addOnCompleteListener { userTask ->
+                                    if (userTask.isSuccessful && userTask.result.exists()) {
+                                        startActivity(Intent(this, EventsActivity::class.java))
+                                        finish()
+                                    } else {
+                                        Toast.makeText(this, "Usuário não encontrado no banco de dados.", Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                            }
                         } else {
-                            Toast.makeText(this, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "Email ou senha incorretos.", Toast.LENGTH_SHORT).show()
                         }
                     }
             } else {
-                Toast.makeText(this, "Please fill in all fields.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
             }
         }
 

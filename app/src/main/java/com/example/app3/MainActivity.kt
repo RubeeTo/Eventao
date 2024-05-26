@@ -1,7 +1,6 @@
 package com.example.app3
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -14,6 +13,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
+import android.graphics.Bitmap
 
 class MainActivity : AppCompatActivity() {
 

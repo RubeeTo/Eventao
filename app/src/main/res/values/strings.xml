@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">app3</string>
+    <string name="app_name">App3</string>
+    <string name="event_image">Event Image</string>
+
+
+    <string name="qr_code">Código QR</string>
+
+
 </resources>
