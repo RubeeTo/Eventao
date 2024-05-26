@@ -5,39 +5,32 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/editTextName"
+    <TextView
+        android:id="@+id/textViewName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome" />
+        android:text="Nome do Evento"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextCPF"
+    <TextView
+        android:id="@+id/textViewDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="CPF"
-        android:inputType="number"
+        android:text="Descrição do Evento"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data do Evento"
         android:layout_marginTop="8dp" />
 
     <Button
-        android:id="@+id/buttonGenerateQR"
+        android:id="@+id/buttonParticipants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gerar QR Code"
-        android:layout_marginTop="16dp" />
-
-    <ImageView
-        android:id="@+id/imageViewQR"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:visibility="gone"
-        android:layout_marginTop="16dp" />
-
-    <Button
-        android:id="@+id/buttonBackToInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Voltar"
-        android:visibility="gone"
+        android:text="Ver Participantes"
         android:layout_marginTop="16dp" />
 </LinearLayout>
