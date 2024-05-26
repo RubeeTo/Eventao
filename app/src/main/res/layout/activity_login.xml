@@ -8,34 +8,69 @@
 
     <EditText
         android:id="@+id/editTextEmail"
+        android:background="@drawable/input_login"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="Seu email"
+        android:textColorHint="@color/lightGray"
         android:inputType="textEmailAddress"
-        android:layout_marginBottom="8dp"/>
+        />
 
     <EditText
         android:id="@+id/editTextPassword"
+        android:background="@drawable/input_login"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:hint="Sua senha"
+        android:textColorHint="@color/lightGray"
         android:inputType="textPassword"
         android:layout_below="@id/editTextEmail"
-        android:layout_marginBottom="8dp"/>
 
-    <Button
-        android:id="@+id/buttonLogin"
+        />
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/buttonLogin"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Login"-->
+<!--        android:layout_below="@id/editTextPassword"-->
+<!--        android:layout_marginBottom="16dp"-->
+<!--        />-->
+
+    <LinearLayout
+        android:id="@+id/linearInscricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_below="@id/editTextPassword"
-        android:layout_marginBottom="16dp"/>
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/editTextPassword">
 
-    <Button
+        <TextView
+            android:id="@+id/textInscricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="Não possui conta?" />
+
+        <TextView
+            android:id="@+id/textLinkInscricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:text="Cadastre-se?"
+            />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonRegister"
+        android:background="@drawable/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:layout_below="@id/buttonLogin"/>
+        android:text="Acessar"
+        android:textColor="@color/white"
+        android:layout_below="@+id/linearInscricao"
+        />
 
 </RelativeLayout>
