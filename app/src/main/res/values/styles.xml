@@ -12,10 +12,16 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="linearVertical">
+        <item name="android:padding">20dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
     <style name="logoCabecalho">
-        <item name="srcCompat">@drawable/logo_eventao</item>
+        <item name="android:src">@drawable/logo_eventao</item>
         <item name="android:layout_marginTop">80dp</item>
         <item name="android:layout_marginBottom">50dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
     </style>
 
     <style name="acessTitle">
