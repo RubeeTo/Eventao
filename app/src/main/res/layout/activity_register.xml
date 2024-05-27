@@ -27,15 +27,17 @@
             android:id="@+id/editTextNome"
             style="@style/inputPersonName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="" />
+            android:layout_height="wrap_content"/>
+<!--            android:inputType="" -->
+
 
         <EditText
             android:id="@+id/editTextCPF"
             style="@style/inputCpf"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="" />
+            android:layout_height="wrap_content"/>
+<!--            android:inputType="" -->
+
 
         <EditText
             android:id="@+id/editTextEmail"
