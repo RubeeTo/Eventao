@@ -4,6 +4,7 @@
     <string name="qr_code">Código QR</string>
     <string name="txtNome">Seu nome</string>
     <string name="txtEmail">Seu email</string>
+    <string name="txtCpf">Seu CPF</string>
     <string name="txtPassword">Sua senha</string>
 
 

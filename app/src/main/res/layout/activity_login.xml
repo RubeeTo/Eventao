@@ -1,50 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/backgorund_0"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="20dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:text="teste sua conta"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/inputEmail"
-        android:inputType="textEmailAddress" />
+        <ImageView
+            style="@style/logoCabecalho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/inputPassword"
-        android:inputType="textPassword"
-        android:layout_marginTop="8dp" />
+        <TextView
+            style="@style/acessTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acesse sua conta" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Não tem cadastro?"/>
+        <EditText
+            android:id="@+id/editTextEmail"
+            style="@style/inputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Logar"
-        android:layout_marginTop="16dp" />
+        <EditText
+            android:id="@+id/editTextPassword"
+            style="@style/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/buttonRegister"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:text="Não tem cadastro?" />
+
+            <TextView
+                android:id="@+id/buttonRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="Registre-se"
+                android:textColor="@color/blue4" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonLogin"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logar" />
+    </LinearLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar"
-        android:layout_marginTop="8dp" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/adminAcess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/admin_icon"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
+
 </LinearLayout>
+
