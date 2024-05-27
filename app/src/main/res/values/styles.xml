@@ -11,4 +11,49 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="inputlayout">
+        <item name="android:textSize">14dp</item>
+        <item name="android:background">@drawable/border_input</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColorHint">@color/gray0</item>
+        <item name="android:drawablePadding">8dp</item>
+
+    </style>
+
+    <style name="inputPersonName" parent="inputlayout">
+        <item name="android:drawableStart">@drawable/person_icon</item>
+        <item name="android:hint">@string/txtNome</item>
+    </style>
+
+    <style name="inputEmail" parent="inputlayout">
+        <item name="android:drawableStart">@drawable/email_icon</item>
+        <item name="android:hint">@string/txtEmail</item>
+    </style>
+
+    <style name="inputPassword" parent="inputlayout">
+        <item name="android:drawableStart">@drawable/password_icon</item>
+        <item name="android:hint">@string/txtPassword</item>
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+    <style name="inputLocal">
+        <item name="android:drawableStart">@drawable/local_icon</item>
+    </style>
+
+    <style name="inputSeat">
+        <item name="android:drawableStart">@drawable/seat_icon</item>
+    </style>
+
 </resources>
