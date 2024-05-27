@@ -32,7 +32,7 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Não tem cadastro"/>
+        android:text="Não tem cadastro?"/>
 
     <Button
         android:id="@+id/buttonLogin"
