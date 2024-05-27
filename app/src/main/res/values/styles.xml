@@ -17,6 +17,15 @@
         <item name="android:orientation">vertical</item>
     </style>
 
+    <style name="header">
+        <item name="android:background">@color/blue4</item>
+        <item name="background">@color/blue5</item>
+        <item name="navigationIcon">@drawable/back_arrow</item>
+        <item name="contentInsetStart">50dp</item>
+        <item name="contentInsetStartWithNavigation">10dp</item>
+    </style>
+
+
     <style name="logoCabecalho">
         <item name="android:src">@drawable/logo_eventao</item>
         <item name="android:layout_marginTop">80dp</item>
