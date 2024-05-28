@@ -6,6 +6,7 @@
     <string name="txtEmail">Seu email</string>
     <string name="txtCpf">Seu CPF</string>
     <string name="txtPassword">Sua senha</string>
+    <string name="txtCadastro">Cadastro de conta</string>
 
 
 </resources>

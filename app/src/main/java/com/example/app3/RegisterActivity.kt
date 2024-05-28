@@ -24,8 +24,17 @@ class RegisterActivity : AppCompatActivity() {
         val editTextEmail = findViewById<EditText>(R.id.editTextEmail)
         val editTextPassword = findViewById<EditText>(R.id.editTextPassword)
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
-        val header = findViewById<Toolbar>(R.id.header)
-        setSupportActionBar(header)
+        val toolbar = findViewById<Toolbar>(R.id.header)
+
+
+        setSupportActionBar(findViewById(R.id.header))
+
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.back_arrow)
+        }
+
+       toolbar.setNavigationOnClickListener { onBackPressed() }
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
@@ -50,18 +59,5 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                // Ação do botão de voltar
-                finish()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-
 
 }

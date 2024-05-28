@@ -17,14 +17,13 @@
         <item name="android:orientation">vertical</item>
     </style>
 
-    <style name="header">
-        <item name="android:background">@color/blue4</item>
-        <item name="background">@color/blue5</item>
+
+
+    <style name="backPage">
         <item name="navigationIcon">@drawable/back_arrow</item>
         <item name="contentInsetStart">50dp</item>
         <item name="contentInsetStartWithNavigation">10dp</item>
     </style>
-
 
     <style name="logoCabecalho">
         <item name="android:src">@drawable/logo_eventao</item>
@@ -55,6 +54,7 @@
         <item name="android:textColorHint">@color/gray0</item>
         <item name="android:drawablePadding">8dp</item>
     </style>
+
 
     <style name="inputPersonName" parent="inputlayout">
         <item name="android:drawableStart">@drawable/person_icon</item>

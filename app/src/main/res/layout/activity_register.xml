@@ -1,25 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgorund_0"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".RegisterActivity"
+    >
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/header"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/header"
-         />
+      >
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue5"
+                app:title="@string/txtCadastro"
+                app:titleTextColor="@color/white"
+                app:navigationIcon="@drawable/back_arrow"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/linearVertical"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/appBarHeader"
+        style="@style/linearVertical">
 
         <TextView
             style="@style/acessTitle"
@@ -61,5 +80,5 @@
             android:text="Cadastrar" />
     </LinearLayout>
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
