@@ -25,30 +25,33 @@
             />
 
         <TextView
-            style="@style/acessTitle"
+            style="@style/titleDarkBg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="Acesse sua conta" />
 
         <EditText
             android:id="@+id/editTextEmail"
-            style="@style/inputEmail"
+            style="@style/inputEmailDk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/editTextPassword"
-            style="@style/inputPassword"
+            style="@style/inputPasswordDk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:inputType="textPassword" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
@@ -57,7 +60,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
-                android:text="Não tem cadastro?" />
+                android:text="Não tem cadastro?"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/buttonRegister"
@@ -65,16 +69,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:text="Registre-se"
-                android:textColor="@color/blue4" />
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
+        <Space
+            style="@style/buttonTop" />
+
         <Button
             android:id="@+id/buttonLogin"
-            style="@style/button"
-            android:layout_width="match_parent"
+            style="@style/buttonDk"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Logar" />
+            android:layout_gravity="center_horizontal"
+            android:text="Acessar" />
 
         <RelativeLayout
             android:layout_width="match_parent"

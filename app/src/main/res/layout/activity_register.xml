@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgorund_0"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".RegisterActivity"
     >
@@ -24,7 +24,7 @@
                 android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/blue5"
+                android:background="@color/blue3"
                 app:title="@string/txtCadastro"
                 app:titleTextColor="@color/white"
                 app:navigationIcon="@drawable/back_arrow"
@@ -40,43 +40,59 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarHeader"
         style="@style/linearVertical">
 
+        <Space
+            style="@style/spaceTop"/>
+
         <TextView
-            style="@style/acessTitle"
+            style="@style/titleLightkBg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Informe seus dados" />
+            android:text="Informe seus dados"/>
 
         <EditText
             android:id="@+id/editTextNome"
-            style="@style/inputPersonName"
+            style="@style/inputPersonNameLg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <Space
+            style="@style/spaceInput"/>
 
         <EditText
             android:id="@+id/editTextCPF"
-            style="@style/inputCpf"
+            style="@style/inputCpfLg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <Space
+            style="@style/spaceInput"/>
+
         <EditText
             android:id="@+id/editTextEmail"
-            style="@style/inputEmail"
+            style="@style/inputEmailLg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress" />
 
+        <Space
+            style="@style/spaceInput"/>
+
         <EditText
             android:id="@+id/editTextPassword"
-            style="@style/inputPassword"
+            style="@style/inputPasswordLg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
 
+        <Space
+            style="@style/buttonTop" />
+
         <Button
             android:id="@+id/buttonRegister"
-            style="@style/button"
-            android:layout_width="match_parent"
+            style="@style/buttonLg"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:text="Cadastrar" />
     </LinearLayout>
 
