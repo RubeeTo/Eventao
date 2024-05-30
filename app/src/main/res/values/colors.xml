@@ -8,28 +8,21 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-        <color name="colorPrimary">#6200EE</color>
-        <color name="colorPrimaryDark">#3700B3</color>
-        <color name="colorAccent">#03DAC5</color>
-        <color name="colorWhite">#FFFFFF</color>
-        <color name="colorBlack">#000000</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
 
-<!--    <color name="blue0">#8ABEEE</color>-->
-<!--    <color name="blue1">#A4DBED</color>-->
-<!--    <color name="blue2">#00C6FF</color>-->
-<!--    <color name="blue3">#0072FF</color>-->
-<!--    <color name="blue4">#135289</color>-->
-<!--    <color name="blue5">#0153B8</color>-->
+
 
     <color name="blue2">#48B1BF</color>
     <color name="blue3">#008DD4</color>
-
 
     <color name="gray0">#C5C0C0</color>
     <color name="gray1">#747C7E</color>
 
     <color name="black1">#120D26</color>
-
 
     <color name="test1">#E52525</color>
     <color name="test2">#63E525</color>

@@ -40,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -65,18 +66,14 @@ dependencies {
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("androidx.fragment:fragment-ktx:1.3.6")
     implementation(libs.firebase.auth.ktx)
     implementation(libs.androidx.ui.graphics.android)
     implementation(libs.androidx.foundation.android)
     implementation(libs.androidx.material3.android)
     implementation(libs.androidx.runtime.android)
     implementation(libs.androidx.activity)
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
-    dependencies {
-        implementation ("com.github.bumptech.glide:glide:4.12.0")
-        annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
     }
-
-
-
-}

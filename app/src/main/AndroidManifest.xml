@@ -16,7 +16,8 @@
         tools:targetApi="31">
         <activity
             android:name=".MainAdmin"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <!-- QRCodeReaderActivity -->
         <activity
             android:name=".QRCodeReaderActivity"
