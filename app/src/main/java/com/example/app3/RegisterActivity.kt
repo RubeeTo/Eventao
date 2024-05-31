@@ -2,11 +2,14 @@ package com.example.app3
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -21,6 +24,20 @@ class RegisterActivity : AppCompatActivity() {
         val editTextEmail = findViewById<EditText>(R.id.editTextEmail)
         val editTextPassword = findViewById<EditText>(R.id.editTextPassword)
         val buttonRegister = findViewById<Button>(R.id.buttonRegister)
+        val toolbar = findViewById<Toolbar>(R.id.header)
+
+
+        setSupportActionBar(findViewById(R.id.header))
+
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.back_arrow)
+        }
+
+       toolbar.setNavigationOnClickListener { onBackPressed() }
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         buttonRegister.setOnClickListener {
             val email = editTextEmail.text.toString()
@@ -42,4 +59,5 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
+
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/txtHome"
+        android:id="@+id/btnHome"
+        android:icon="@drawable/home_icon"
+        />
+    <item android:title="@string/txtQRCode"
+        android:id="@+id/btnScan"
+        android:icon="@drawable/scan_icon"
+        />
+    <item android:title="@string/txtAddEvent"
+        android:id="@+id/btnAddEvent"
+        android:icon="@drawable/new_event_icon"
+        />
+</menu>

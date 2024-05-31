@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Permissão para acesso à internet -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- Permissão para usar a câmera -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Permissão para usar a câmera -->
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -17,59 +14,53 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         tools:targetApi="31">
-
-        <!-- QRCodeReaderActivity -->
+        <activity
+            android:name=".SelectedEventAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".MainAdmin"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- QRCodeReaderActivity -->
         <activity
             android:name=".QRCodeReaderActivity"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <!-- CreateEventActivity -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- CreateEventActivity -->
         <activity
             android:name=".CreateEventActivity"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <!-- MainActivity -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <!-- RegisterActivity -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- RegisterActivity -->
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <!-- LoginActivity -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- LoginActivity -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".EventDetailActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- EventsActivity -->
+        </activity> <!-- EventsActivity -->
         <activity
             android:name=".EventsActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <!-- EventDetailActivity -->
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- EventDetailActivity -->
         <activity
-            android:name=".EventDetailActivity"
-            android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
 
-        <!-- ParticipantsActivity -->
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- ParticipantsActivity -->
         <activity
             android:name=".ParticipantsActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
+
 </manifest>

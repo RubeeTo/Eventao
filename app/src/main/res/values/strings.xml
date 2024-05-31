@@ -6,6 +6,18 @@
     <string name="txtEmail">Seu email</string>
     <string name="txtCpf">Seu CPF</string>
     <string name="txtPassword">Sua senha</string>
+    <string name="txtCadastroConta">Cadastro de conta</string>
+    <string name="txtCadastroEvento">Cadastro de evento</string>
+    <string name="txtHome">Home</string>
+    <string name="txtQRCode">Ler QRCode</string>
+    <string name="txtAddEvent">Criar evento</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+
+    <string name="loreIpsun">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.</string>
 
 
 </resources>
