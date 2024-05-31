@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:context=".RegisterActivity"
-    >
+    tools:context=".RegisterActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarHeader"
@@ -25,10 +24,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/blue3"
-                app:title="@string/txtCadastroConta"
-                app:titleTextColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:navigationIcon="@drawable/back_arrow"
-                />
+                app:title="@string/txtCadastroConta"
+                app:titleTextColor="@color/white" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
