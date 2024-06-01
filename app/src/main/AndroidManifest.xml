@@ -15,29 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         tools:targetApi="31">
-        <activity
-            android:name=".SelectedEventAdmin"
-            android:exported="false" />
-        <activity
-            android:name=".MainAdmin"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- QRCodeReaderActivity -->
-        <activity
-            android:name=".QRCodeReaderActivity"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- CreateEventActivity -->
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- MainActivity -->
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- RegisterActivity -->
-        <activity
-            android:name=".RegisterActivity"
-            android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- LoginActivity -->
+
         <activity
 
             android:name=".LoginActivity"
@@ -50,6 +28,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- EventsActivity -->
+
+
+
+        <activity
+            android:name=".SelectedEventAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".MainAdmin"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- QRCodeReaderActivity -->
+        <activity
+            android:name=".QRCodeReaderActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- CreateEventActivity -->
+        <activity
+            android:name=".CreateEventActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- RegisterActivity -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- LoginActivity -->
+
         <activity
             android:name=".EventsActivity"
             android:exported="true"
