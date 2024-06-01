@@ -23,7 +23,7 @@ class CreateEventAdmin : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_add_event_admin, container, false)
+        return inflater.inflate(R.layout.fragment_create_event_admin, container, false)
     }
 
 //        editTextName = findViewById(R.id.editTextName)
