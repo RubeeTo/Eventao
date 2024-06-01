@@ -1,4 +1,4 @@
-// LoginActivity.kt
+// LoginClient.kt
 package com.example.app3
 
 import android.content.Intent
@@ -12,13 +12,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
-class LoginActivity : AppCompatActivity() {
+class LoginClient : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login_client)
 
         auth = FirebaseAuth.getInstance()
 
@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         buttonRegister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
+            val intent = Intent(this, RegisterClient::class.java)
             startActivity(intent)
         }
 

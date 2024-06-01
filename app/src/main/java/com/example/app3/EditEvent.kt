@@ -12,5 +12,5 @@ class EditEvent : AppCompatActivity() {
         setContentView(R.layout.activity_edit_event)
 
         }
-    }
+
 }

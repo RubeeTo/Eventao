@@ -14,7 +14,7 @@ class EventAdapter(private val context: Context, private val eventsList: List<Ev
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.event_item, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_event, parent, false)
         return EventViewHolder(view)
     }
 
@@ -29,7 +29,7 @@ class EventAdapter(private val context: Context, private val eventsList: List<Ev
             .into(holder.imageViewEvent)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(context, EventDetailActivity::class.java).apply {
+            val intent = Intent(context, EventDetailClient::class.java).apply {
                 putExtra("eventId", event.id)  // Passando o ID do evento
                 putExtra("name", event.name)
                 putExtra("description", event.description)

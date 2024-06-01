@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         if (auth.currentUser == null) {
             // Redirect to login if user is not authenticated
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, LoginClient::class.java))
             finish()
             return
         }

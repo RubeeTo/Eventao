@@ -1,17 +1,13 @@
-// CreateEventActivity.kt
+// CreateEvent.kt
 package com.example.app3
 
-import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.FirebaseDatabase
-import java.util.*
 
-class CreateEventActivity : AppCompatActivity() {
+class CreateEvent : AppCompatActivity() {
 
     private lateinit var editTextName: EditText
     private lateinit var editTextDescription: EditText
