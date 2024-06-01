@@ -16,13 +16,6 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".EventDetailAdmin"
-            android:exported="false" />
-        <activity
             android:name=".LoginClient"
             android:exported="true"
             android:label="@string/app_name"
@@ -32,31 +25,45 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- EventsActivity -->
+        </activity>
+
+        <activity
+            android:name=".MainClient"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EventDetailAdmin"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".EditEvent"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainAdmin"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- QRCodeReaderActivity -->
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".QRCodeReaderActivity"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- CreateEventActivity -->
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EventsActivity"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- RegisterClient -->
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterClient"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- EventDetailClient -->
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EventDetailClient"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" /> <!-- ParticipantActivity -->
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ParticipantActivity"
             android:exported="true"
