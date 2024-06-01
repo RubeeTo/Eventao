@@ -4,6 +4,7 @@
     <!-- Permissão para acesso à internet -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- Permissão para usar a câmera -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -26,7 +27,7 @@
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- CreateEventActivity -->
         <activity
-            android:name=".CreateEventActivity"
+            android:name=".LoginActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- MainActivity -->
         <activity
@@ -38,6 +39,7 @@
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- LoginActivity -->
         <activity
+
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
