@@ -159,38 +159,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lineEventDetail1" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonParticipants"
-            style="@style/buttonDetail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/btn_event_detail"
-            android:text="Participantes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+        <!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
 
-        <ImageView
-            android:id="@+id/lineEventDetail2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="?actionBarDivider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonParticipants" />
+        <Space
+            android:id="@+id/space"
+            style="@style/buttonTop"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescription"
+            tools:layout_editor_absoluteX="25dp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonEditEvent"
-            style="@style/buttonDetail"
-            android:layout_width="match_parent"
+        <Button
+            style="@style/buttonLg"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Editar evento"
-            app:layout_constraintTop_toBottomOf="@+id/lineEventDetail2"
-            tools:layout_editor_absoluteX="16dp" />
+            android:layout_gravity="center_horizontal"
+            android:text="Inscreva-se"
+            app:layout_constraintEnd_toEndOf="@+id/space"
+            app:layout_constraintStart_toStartOf="@+id/space"
+            app:layout_constraintTop_toBottomOf="@+id/space" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

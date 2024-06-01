@@ -4,7 +4,7 @@
     <!-- Permissão para acesso à internet -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- Permissão para usar a câmera -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -15,9 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         tools:targetApi="31">
-
         <activity
-
+            android:name=".activity_event_detail_admin"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:label="@string/app_name"
@@ -28,9 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity> <!-- EventsActivity -->
-
-
-
         <activity
             android:name=".SelectedEventAdmin"
             android:exported="false" />
@@ -54,13 +52,11 @@
             android:name=".RegisterActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- LoginActivity -->
-
         <activity
             android:name=".EventsActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- EventDetailActivity -->
         <activity
-
             android:name=".EventDetailActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- ParticipantsActivity -->
