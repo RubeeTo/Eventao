@@ -4,6 +4,7 @@
 
     <string name="txtCadastroConta">Cadastro de conta</string>
     <string name="txtCadastroEvento">Cadastro de evento</string>
+    <string name="txtEditEvento">Edição de evento</string>
 
     <string name="event_image">Event Image</string>
     <string name="qr_code">Código QR</string>
