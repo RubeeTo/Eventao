@@ -44,10 +44,7 @@
             android:name=".QRCodeReaderActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- CreateEventActivity -->
-        <activity
-            android:name=".CreateEvent"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".EventsActivity"
             android:exported="false"
