@@ -1,13 +1,15 @@
-// CreateEvent.kt
 package com.example.app3
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 
-class CreateEvent : AppCompatActivity() {
+class CreateEventAdmin : Fragment() {
 
     private lateinit var editTextName: EditText
     private lateinit var editTextDescription: EditText
@@ -17,17 +19,19 @@ class CreateEvent : AppCompatActivity() {
     private lateinit var buttonSave: Button
     private lateinit var buttonCancel: Button
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_event)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_add_event_admin, container, false)
+    }
 
 //        editTextName = findViewById(R.id.editTextName)
 //        editTextDescription = findViewById(R.id.editTextDescription)
-//        editTextLocation = findViewById(R.id.editTextLocation)
+//        editTextLocation = findViewById(R.id.editTextLocalName)
 //        editTextDate = findViewById(R.id.editTextDate)
 //        imageViewEvent = findViewById(R.id.imageViewEvent)
 //        buttonSave = findViewById(R.id.buttonSave)
-//        buttonCancel = findViewById(R.id.buttonCancel)
 //
 //        val calendar = Calendar.getInstance()
 //        val datePicker = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
@@ -65,9 +69,15 @@ class CreateEvent : AppCompatActivity() {
 //                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
 //            }
 //        }
-//
-//        buttonCancel.setOnClickListener {
-//            finish()
-//        }
-    }
+
+
+
+
+
+
+
+
+
+
+
 }

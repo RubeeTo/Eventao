@@ -22,7 +22,7 @@ class MainAdmin : AppCompatActivity() {
                     true
                 }
                 R.id.btnAddEvent -> {
-                    replaceFragment(AddEventMenuAdmin())
+                    replaceFragment(CreateEventAdmin())
                     true
                 }
                 else -> false
