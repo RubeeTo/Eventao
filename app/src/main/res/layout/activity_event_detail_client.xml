@@ -32,8 +32,6 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/img_event_generic"
-        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,9 +40,11 @@
         android:id="@+id/constraintLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:padding="25dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewEvent">
 
@@ -89,7 +89,7 @@
 
             <TextView
                 android:id="@+id/textViewLocalStreetNumber"
-                style="@style/textEventDetails"
+                style="@style.textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rua, número"
@@ -101,7 +101,7 @@
                 style="@style.textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="cidade/estado"
+                android:text="Cidade/Estado"
                 app:layout_constraintStart_toStartOf="@+id/textViewLocalStreetNumber"
                 app:layout_constraintTop_toBottomOf="@+id/textViewLocalStreetNumber" />
 
@@ -116,7 +116,7 @@
 
             <TextView
                 android:id="@+id/textViewDate"
-                style="@style/textEventDetails"
+                style="@style.textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Data do Evento"
@@ -129,7 +129,7 @@
                 style="@style.textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hora do evento"
+                android:text="Hora do Evento"
                 app:layout_constraintStart_toStartOf="@+id/textViewDate"
                 app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
         </androidx.constraintlayout.widget.ConstraintLayout>
