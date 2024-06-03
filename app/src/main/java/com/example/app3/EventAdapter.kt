@@ -30,11 +30,10 @@ class EventAdapter(private val context: Context, private val eventsList: List<Ev
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, EventDetailClient::class.java).apply {
-                putExtra("eventId", event.id)  // Passando o ID do evento
-                putExtra("name", event.name)
-                putExtra("description", event.description)
-                putExtra("date", event.date)
-                putExtra("imageUrl", event.imageUrl)
+                putExtra("EVENT_ID", event.id.toString())
+                putExtra("EVENT_NAME", event.name)
+                putExtra("EVENT_DESCRIPTION", event.description)
+                putExtra("EVENT_DATE", event.date)
             }
             context.startActivity(intent)
         }
