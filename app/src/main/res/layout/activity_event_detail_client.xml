@@ -32,8 +32,6 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/img_event_generic"
-        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -42,9 +40,11 @@
         android:id="@+id/constraintLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:padding="25dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageViewEvent">
 
@@ -77,6 +77,8 @@
                 app:srcCompat="@drawable/local_icon" />
 
             <TextView
+
+
                 android:id="@+id/textViewLocalName"
                 style="@style/textEventDetails"
                 android:layout_width="wrap_content"
@@ -88,6 +90,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+
                 android:id="@+id/textViewLocalStreetNumber"
                 style="@style/textEventDetails"
                 android:layout_width="wrap_content"
@@ -97,6 +100,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textViewLocalName" />
 
             <TextView
+
                 android:id="@+id/textViewCityState"
                 style="@style.textEventDetails"
                 android:layout_width="wrap_content"
@@ -116,7 +120,7 @@
 
             <TextView
                 android:id="@+id/textViewDate"
-                style="@style/textEventDetails"
+                style="@style.textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Data do Evento"
@@ -125,6 +129,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+
                 android:id="@+id/textViewHour"
                 style="@style.textEventDetails"
                 android:layout_width="wrap_content"

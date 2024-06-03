@@ -77,6 +77,7 @@
                 android:layout_height="8dp"/>
 
             <TextView
+                android:id="@+id/textViewCityState"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cidade e estado" />
@@ -86,6 +87,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txtExpCity_State"
+                style="@style/inputAddEvent" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Número da rua" />
+
+            <EditText
+                android:id="@+id/editTextEventStreetNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insira o número da rua"
                 style="@style/inputAddEvent" />
 
             <Space

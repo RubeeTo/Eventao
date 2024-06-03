@@ -19,6 +19,10 @@ class EditEvent : AppCompatActivity() {
         val editTextEventDescription: EditText = findViewById(R.id.editTextEventDescription)
         val editTextEventDate: EditText = findViewById(R.id.editTextEventDate)
         val editTextEventImageUrl: EditText = findViewById(R.id.editTextEventImageUrl)
+        val editTextEventHour: EditText = findViewById(R.id.editTextHour)
+        val editTextEventLocalName: EditText = findViewById(R.id.editTextLocalName)
+        val editTextEventStreetNumber: EditText = findViewById(R.id.editTextEventStreetNumber)
+        val editTextEventCityState: EditText = findViewById(R.id.editTextCityState)
         val buttonAddEvent: Button = findViewById(R.id.buttonAddEvent)
 
         database = FirebaseDatabase.getInstance().getReference("events")
@@ -28,8 +32,13 @@ class EditEvent : AppCompatActivity() {
             val eventDescription = editTextEventDescription.text.toString()
             val eventDate = editTextEventDate.text.toString()
             val eventImageUrl = editTextEventImageUrl.text.toString()
+            val eventHour = editTextEventHour.text.toString()
+            val eventLocalName = editTextEventLocalName.text.toString()
+            val eventStreetNumber = editTextEventStreetNumber.text.toString()
+            val eventCityState = editTextEventCityState.text.toString()
 
-            if (eventName.isNotEmpty() && eventDescription.isNotEmpty() && eventDate.isNotEmpty() && eventImageUrl.isNotEmpty()) {
+            if (eventName.isNotEmpty() && eventDescription.isNotEmpty() && eventDate.isNotEmpty() && eventImageUrl.isNotEmpty() &&
+                eventHour.isNotEmpty() && eventLocalName.isNotEmpty() && eventStreetNumber.isNotEmpty() && eventCityState.isNotEmpty()) {
                 getNextEventName { eventId ->
                     if (eventId != null) {
                         val event = Event(
@@ -37,7 +46,11 @@ class EditEvent : AppCompatActivity() {
                             name = eventName,
                             description = eventDescription,
                             date = eventDate,
-                            imageUrl = eventImageUrl
+                            imageUrl = eventImageUrl,
+                            hour = eventHour,
+                            localName = eventLocalName,
+                            streetNumber = eventStreetNumber,
+                            cityState = eventCityState
                         )
 
                         database.child(eventId).setValue(event).addOnCompleteListener { task ->

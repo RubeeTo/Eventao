@@ -34,6 +34,7 @@ class EventAdapter(private val context: Context, private val eventsList: List<Ev
                 putExtra("EVENT_NAME", event.name)
                 putExtra("EVENT_DESCRIPTION", event.description)
                 putExtra("EVENT_DATE", event.date)
+                putExtra("EVENT_IMAGE_URL", event.imageUrl)  // Adiciona a URL da imagem
             }
             context.startActivity(intent)
         }
