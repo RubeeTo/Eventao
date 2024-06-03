@@ -60,7 +60,8 @@ class LoginClient : AppCompatActivity() {
 
         buttonRegister.setOnClickListener {
             val intent = Intent(this, RegisterClient::class.java)
-            startActivity(intent)
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
 
         buttonAdminAcess.setOnClickListener {
