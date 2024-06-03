@@ -34,10 +34,15 @@ class EventAdapter(private val context: Context, private val eventsList: List<Ev
                 putExtra("EVENT_NAME", event.name)
                 putExtra("EVENT_DESCRIPTION", event.description)
                 putExtra("EVENT_DATE", event.date)
-                putExtra("EVENT_IMAGE_URL", event.imageUrl)  // Adiciona a URL da imagem
+                putExtra("EVENT_HOUR", event.hour)
+                putExtra("EVENT_LOCAL_NAME", event.localName)
+                putExtra("EVENT_STREET_NUMBER", event.streetNumber)
+                putExtra("EVENT_CITY_STATE", event.cityState)
+                putExtra("EVENT_IMAGE_URL", event.imageUrl)
             }
             context.startActivity(intent)
         }
+
     }
 
     override fun getItemCount(): Int {

@@ -24,6 +24,10 @@ class EventDetailClient : AppCompatActivity() {
         val textViewName = findViewById<TextView>(R.id.textViewName)
         val textViewDescription = findViewById<TextView>(R.id.textViewDescription)
         val textViewDate = findViewById<TextView>(R.id.textViewDate)
+        val textViewHour = findViewById<TextView>(R.id.textViewHour) // Novo campo
+        val textViewLocalName = findViewById<TextView>(R.id.textViewLocalName) // Novo campo
+        val textViewLocalStreetNumber = findViewById<TextView>(R.id.textViewLocalStreetNumber) // Novo campo
+        val textViewCityState = findViewById<TextView>(R.id.textViewCityState) // Novo campo
         val imageViewEvent = findViewById<ImageView>(R.id.imageViewEvent)
         val buttonParticipants = findViewById<Button>(R.id.buttonParticipants)
         val buttonEditEvent = findViewById<Button>(R.id.buttonEditEvent)
@@ -53,17 +57,29 @@ class EventDetailClient : AppCompatActivity() {
         val eventName = intent.getStringExtra("EVENT_NAME")
         val eventDescription = intent.getStringExtra("EVENT_DESCRIPTION")
         val eventDate = intent.getStringExtra("EVENT_DATE")
+        val eventHour = intent.getStringExtra("EVENT_HOUR") // Novo campo
+        val eventLocalName = intent.getStringExtra("EVENT_LOCAL_NAME") // Novo campo
+        val eventStreetNumber = intent.getStringExtra("EVENT_STREET_NUMBER") // Novo campo
+        val eventCityState = intent.getStringExtra("EVENT_CITY_STATE") // Novo campo
         val eventImageUrl = intent.getStringExtra("EVENT_IMAGE_URL")
 
         Log.d("EventDetailClient", "Received eventId: $eventId")
         Log.d("EventDetailClient", "Received eventName: $eventName")
         Log.d("EventDetailClient", "Received eventDescription: $eventDescription")
         Log.d("EventDetailClient", "Received eventDate: $eventDate")
+        Log.d("EventDetailClient", "Received eventHour: $eventHour")
+        Log.d("EventDetailClient", "Received eventLocalName: $eventLocalName")
+        Log.d("EventDetailClient", "Received eventStreetNumber: $eventStreetNumber")
+        Log.d("EventDetailClient", "Received eventCityState: $eventCityState")
         Log.d("EventDetailClient", "Received eventImageUrl: $eventImageUrl")
 
         textViewName.text = eventName
         textViewDescription.text = eventDescription
         textViewDate.text = eventDate
+        textViewHour.text = eventHour // Novo campo
+        textViewLocalName.text = eventLocalName // Novo campo
+        textViewLocalStreetNumber.text = eventStreetNumber // Novo campo
+        textViewCityState.text = eventCityState // Novo campo
 
         // Carregar a imagem do evento na ImageView usando Glide
         if (!eventImageUrl.isNullOrEmpty()) {
