@@ -11,7 +11,6 @@ import android.view.SurfaceView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
@@ -96,8 +95,9 @@ class EventDetailClientQRcode : AppCompatActivity(), SurfaceHolder.Callback {
 
     private fun updateUserEventParticipation(userEmail: String, eventId: String) {
         // Atualiza os dados no Realtime Database
-        val userRef = database.getReference("users").child(userEmail.replace(".", ","))
-        userRef.child("event_participation").setValue(eventId)
+        val userRef = database.getReference("event_participants").child(eventId).child(userEmail.replace(".", ","))
+        val user = User(email = userEmail, id = eventId)
+        userRef.setValue(user)
             .addOnSuccessListener {
                 Log.d("EventDetailClientQRcode", "User participation updated successfully")
             }
@@ -105,4 +105,9 @@ class EventDetailClientQRcode : AppCompatActivity(), SurfaceHolder.Callback {
                 Log.e("EventDetailClientQRcode", "Error updating user participation", e)
             }
     }
+
+    data class User(
+        val email: String = "",
+        val id: String = ""
+    )
 }

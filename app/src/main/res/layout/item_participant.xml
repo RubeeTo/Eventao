@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +18,7 @@
             android:id="@+id/imageView"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:layout_marginRight="28dp"
+            android:layout_marginEnd="28dp"
             app:srcCompat="@drawable/person_icon"
             app:tint="@color/blue4"/>
 
@@ -33,24 +32,29 @@
                 android:id="@+id/textViewParticipantName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:text="Nome do Participante" />
 
             <TextView
                 android:id="@+id/textViewParticipantEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:text="Email do participante" />
 
             <TextView
                 android:id="@+id/textViewParticipantCPF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14dp"
+                android:textSize="14sp"
                 android:text="Cpf do participante" />
+
+            <TextView
+                android:id="@+id/textViewParticipantId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="ID do participante" />
         </LinearLayout>
-
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
