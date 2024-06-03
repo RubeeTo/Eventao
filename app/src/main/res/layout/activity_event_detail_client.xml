@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,7 +98,7 @@
 
             <TextView
                 android:id="@+id/textViewCityState"
-                style="@style/textEventDetails"
+                style="@style.textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="cidade/estado"
@@ -127,14 +126,12 @@
 
             <TextView
                 android:id="@+id/textViewHour"
-                style="@style/textEventDetails"
+                style="@style.textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hora do evento"
                 app:layout_constraintStart_toStartOf="@+id/textViewDate"
                 app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
@@ -159,24 +156,46 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lineEventDetail1" />
 
-        <!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-
         <Space
             android:id="@+id/space"
             style="@style/buttonTop"
             app:layout_constraintTop_toBottomOf="@+id/textViewDescription"
-            tools:layout_editor_absoluteX="25dp" />
+            tools:layout_editor_absoluteX="99dp" />
 
         <Button
+            android:id="@+id/buttonParticipants"
             style="@style/buttonLg"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Inscrever-se"
-            app:layout_constraintEnd_toEndOf="@+id/space"
-            app:layout_constraintStart_toStartOf="@+id/space"
+            android:text="Participantes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/space" />
 
+        <Button
+            android:id="@+id/buttonEditEvent"
+            style="@style/buttonLg"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Editar Evento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonParticipants" />
+
+        <Button
+            android:id="@+id/buttonSubscribe"
+            style="@style/buttonLg"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:text="Inscrever-se"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonEditEvent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
