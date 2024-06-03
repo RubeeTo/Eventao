@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
+            android:name=".EventDetailClientQRcode"
+            android:exported="false" />
+        <activity
             android:name=".LoginClient"
             android:exported="true"
             android:label="@string/app_name"
@@ -26,7 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainClient"
             android:exported="false"
@@ -39,7 +41,6 @@
             android:name=".EventDetailAdmin"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".EditEvent"
             android:exported="false"
