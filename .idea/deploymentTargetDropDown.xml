@@ -5,6 +5,22 @@
       <entry key="Android App">
         <State />
       </entry>
+      <entry key="app">
+        <State>
+          <runningDeviceTargetSelectedWithDropDown>
+            <Target>
+              <type value="RUNNING_DEVICE_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="SERIAL_NUMBER" />
+                  <value value="adb-RX8RB0NAX9E-ulilz7._adb-tls-connect._tcp" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </runningDeviceTargetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-06-03T02:05:22.602472200Z" />
+        </State>
+      </entry>
     </value>
   </component>
 </project>
