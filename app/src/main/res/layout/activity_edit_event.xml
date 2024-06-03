@@ -40,7 +40,9 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <Space style="@style/spaceTop" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -48,14 +50,15 @@
                 android:text="Nome do evento" />
 
             <EditText
-                android:id="@+id/editTextName"
+                android:id="@+id/editTextEventName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txtExpNameEvent"
-                style="@style/inputAddEvent"
-                />
+                style="@style/inputAddEvent" />
 
-            <Space style="@style/spaceInput" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -67,25 +70,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txtExpLocalEvent"
-                style="@style/inputAddEvent"
-                />
+                style="@style/inputAddEvent" />
 
-            <Space style="@style/spaceInput" />
-
-            <TextView
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Rua e número" />
-
-            <EditText
-                android:id="@+id/editTextStreetNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/txtExpStreet_number"
-                style="@style/inputAddEvent"
-                />
-
-            <Space style="@style/spaceInput" />
+                android:layout_height="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -97,10 +86,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txtExpCity_State"
-                style="@style/inputAddEvent"
-                />
+                style="@style/inputAddEvent" />
 
-            <Space style="@style/spaceInput" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -108,13 +98,15 @@
                 android:text="Dia do evento" />
 
             <EditText
-                android:id="@+id/editTextDate"
+                android:id="@+id/editTextEventDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txtExpDateEvent"
-                style="@style/inputAddEvent"/>
+                style="@style/inputAddEvent" />
 
-            <Space style="@style/spaceInput" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -126,9 +118,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txtExpHourEvent"
-                style="@style/inputAddEvent"/>
+                style="@style/inputAddEvent" />
 
-            <Space style="@style/spaceInput" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -136,40 +130,43 @@
                 android:text="Descrição do evento" />
 
             <EditText
-                android:id="@+id/editSynopsis"
+                android:id="@+id/editTextEventDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/txtExpSynopsisEvent"
-                style="@style/inputAddEvent"
-                />
+                style="@style/inputAddEvent" />
 
-            <Space style="@style/spaceInput" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Imagem do evento" />
+                android:text="Imagem do evento (URL)" />
 
-            <Space style="@style/spaceInput" />
-
-            <TextView
-                android:id="@+id/textFileUpload"
-                style="@style/inputAddImage"
+            <EditText
+                android:id="@+id/editTextEventImageUrl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:navigationIcon="@drawable/image_up_icon" />
+                android:hint="Insira o URL da imagem"
+                style="@style/inputAddEvent" />
 
-            <Space style="@style/buttonTop" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
 
             <Button
-                android:id="@+id/buttonRegister"
+                android:id="@+id/buttonAddEvent"
                 style="@style/buttonLg"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Atualizarr"/>
+                android:text="Atualizar" />
 
-            <Space style="@style/buttonTop" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
 
         </LinearLayout>
     </ScrollView>
