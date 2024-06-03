@@ -21,10 +21,19 @@ class MainAdmin : AppCompatActivity() {
                     replaceFragment(HomeAdmin())
                     true
                 }
-                R.id.btnAddEvent -> {
-                    replaceFragment(CreateEventAdmin())
+                R.id.btnScan -> {
+                    replaceFragment(HomeAdmin())
                     true
                 }
+//                R.id.btnEventList -> {
+//                    replaceFragment(HomeAdmin())
+//                    true
+//                }
+                R.id.btnAddEvent -> {
+                    replaceFragment(HomeAdmin())
+                    true
+                }
+
                 else -> false
             }
         }

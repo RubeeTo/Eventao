@@ -20,7 +20,7 @@ class HomeAdmin : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_home_admin, container, false)
+        val view = inflater.inflate(R.layout.activity_events, container, false)
 
         recyclerViewEvents = view.findViewById(R.id.recyclerViewEvents)
         recyclerViewEvents.layoutManager = GridLayoutManager(context, 2)

@@ -38,10 +38,7 @@
 
         </activity>
 
-        <activity
-            android:name=".MainClient"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
+
 
         <activity
             android:name=".MainActivity"
