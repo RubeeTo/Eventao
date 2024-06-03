@@ -39,11 +39,11 @@ class EventDetailClient : AppCompatActivity() {
 //        textViewDescription.text = eventDescription
 //        textViewDate.text = eventDate
 //
-        buttonParticipants.setOnClickListener {
-            val intent = Intent(this, ParticipantActivity::class.java)
+//        buttonParticipants.setOnClickListener {
+//            val intent = Intent(this, ParticipantActivity::class.java)
 //            intent.putExtra("EVENT_ID", eventId)
-            startActivity(intent)
-        }
+//            startActivity(intent)
+//        }
 
 //        buttonEditEvent.setOnClickListener {
 //            val intent = Intent(this, EditEventActivity::class.java)
