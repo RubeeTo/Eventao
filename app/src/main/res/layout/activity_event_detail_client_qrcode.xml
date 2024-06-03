@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/scan_icon"
-                android:tint="@color/black1"/>
+                app:tint="@color/black1"/>
 
             <ImageView
                 android:id="@+id/lineEventDetail1"
@@ -91,12 +91,12 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/imageView"
+
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="20dp"
                     app:srcCompat="@drawable/person_icon"
-                    android:tint="@color/blue4"/>
+                    app:tint="@color/blue4"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -133,12 +133,12 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/imageView"
+
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="20dp"
                     app:srcCompat="@drawable/email_icon"
-                    android:tint="@color/blue4"/>
+                    app:tint="@color/blue4"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -180,7 +180,7 @@
                     android:layout_height="30dp"
                     android:layout_marginRight="20dp"
                     app:srcCompat="@drawable/cpf_icon"
-                    android:tint="@color/blue4"/>
+                    app:tint="@color/blue4"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
