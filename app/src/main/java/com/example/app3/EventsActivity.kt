@@ -2,6 +2,7 @@ package com.example.app3
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,7 @@ class EventsActivity : AppCompatActivity() {
     private lateinit var recyclerViewEvents: RecyclerView
     private lateinit var eventsList: MutableList<Event>
     private lateinit var eventAdapter: EventAdapter
+    private lateinit var addEventButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,12 @@ class EventsActivity : AppCompatActivity() {
 
         eventAdapter = EventAdapter(this, eventsList)
         recyclerViewEvents.adapter = eventAdapter
+
+        addEventButton = findViewById(R.id.addEventButton)
+        addEventButton.setOnClickListener {
+            val intent = Intent(this, EditEvent::class.java)
+            startActivity(intent)
+        }
 
         database = FirebaseDatabase.getInstance().getReference("events")
 
