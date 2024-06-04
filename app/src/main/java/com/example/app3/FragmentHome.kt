@@ -1,3 +1,4 @@
+
 package com.example.app3
 
 import android.os.Bundle
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
-class HomeAdmin : Fragment() {
+class FragmentHome : Fragment() {
 
     private lateinit var database: DatabaseReference
     private lateinit var recyclerViewEvents: RecyclerView
@@ -20,10 +21,10 @@ class HomeAdmin : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_home_admin, container, false)
+        val view = inflater.inflate(R.layout.activity_events, container, false)
 
         recyclerViewEvents = view.findViewById(R.id.recyclerViewEvents)
-        recyclerViewEvents.layoutManager = GridLayoutManager(context, 2)
+        recyclerViewEvents.layoutManager = GridLayoutManager(context, 1)
         eventsList = mutableListOf()
 
         eventAdapter = EventAdapter(requireContext(), eventsList)
@@ -36,6 +37,7 @@ class HomeAdmin : Fragment() {
                 eventsList.clear()
                 for (eventSnapshot in snapshot.children) {
                     val event = eventSnapshot.getValue(Event::class.java)
+
                     if (event != null) {
                         eventsList.add(event)
                     }

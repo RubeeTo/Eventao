@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="-21dp"
@@ -10,15 +10,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardEventView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageViewEvent"
-            android:layout_width="170dp"
-            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
             android:scaleType="centerCrop"
             android:src="@mipmap/img_event_generic" />
 
@@ -27,35 +27,43 @@
 
     <TextView
         android:id="@+id/textViewEventName"
-        android:layout_width="170dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/cardEventView"
         app:layout_constraintStart_toStartOf="@+id/cardEventView"
         app:layout_constraintTop_toBottomOf="@+id/cardEventView"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:hint="Bacanau de Zeus"
         android:textColor="@color/blue4"
-        android:textSize="16dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/localNameEvent"
-        android:layout_width="170dp"
+        android:id="@+id/textViewLocalName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/cardEventView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewEventName"
+        android:drawableStart="@drawable/local_icon"
+        android:layout_marginTop="5dp"
+        android:drawablePadding="15dp"
         android:hint="Mt. Olimpo"
-        android:textSize="12dp"/>
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/textViewEventDate"
-        android:layout_width="170dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/cardEventView"
-        app:layout_constraintStart_toStartOf="@+id/cardEventView"
-        app:layout_constraintTop_toBottomOf="@+id/localNameEvent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLocalName"
+        android:drawableStart="@drawable/hour_icon"
+        android:layout_marginTop="5dp"
+        android:drawablePadding="15dp"
         android:hint="31 de Fev."
-        android:textSize="12dp"/>
+        android:textSize="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

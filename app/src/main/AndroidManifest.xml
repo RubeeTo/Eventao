@@ -38,30 +38,19 @@
 
         </activity>
 
-        <activity
-            android:name=".MainClient"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
+
 
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity
-            android:name=".EventDetailAdmin"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".EditEvent"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity
-            android:name=".MainAdmin"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".QRCodeReaderActivity"
@@ -79,7 +68,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".EventDetailClient"
+            android:name=".EventDetail"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
 

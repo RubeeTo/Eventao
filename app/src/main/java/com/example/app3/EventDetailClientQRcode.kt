@@ -1,14 +1,15 @@
 package com.example.app3
 
-import android.graphics.Canvas
+import android.content.Intent
+import android.graphics.Bitmap
 import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
-import android.view.SurfaceHolder
-import android.view.SurfaceView
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.zxing.BarcodeFormat
@@ -16,74 +17,81 @@ import com.google.zxing.MultiFormatWriter
 import com.google.zxing.WriterException
 import com.google.zxing.common.BitMatrix
 
-class EventDetailClientQRcode : AppCompatActivity(), SurfaceHolder.Callback {
+class EventDetailClientQRcode : AppCompatActivity() {
 
-    private lateinit var surfaceView: SurfaceView
-    private lateinit var holder: SurfaceHolder
+    private lateinit var imageViewEvent: ImageView
+    private lateinit var textViewName: TextView
+    private lateinit var imageViewQRCodeEvent: ImageView
     private lateinit var auth: FirebaseAuth
     private lateinit var database: FirebaseDatabase
     private var eventId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        surfaceView = SurfaceView(this)
-        setContentView(surfaceView)
+        setContentView(R.layout.activity_event_detail_client_qrcode)
 
-        holder = surfaceView.holder
-        holder.addCallback(this)
+        imageViewEvent = findViewById(R.id.imageViewEvent)
+        textViewName = findViewById(R.id.textViewName)
+        imageViewQRCodeEvent = findViewById(R.id.imageViewQRCodeEvent)
+
+
+        val toolbar = findViewById<Toolbar>(R.id.header)
+
+        setSupportActionBar(toolbar)
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setHomeAsUpIndicator(R.drawable.back_arrow)
+        }
+
+        toolbar.setNavigationOnClickListener {
+            val intent = Intent(this, EventDetail::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        fun onBackPressed() {
+            super.onBackPressed()
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
+
+        toolbar.setNavigationOnClickListener { onBackPressed() }
+
+
 
         auth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance()
 
         eventId = intent.getStringExtra("EVENT_ID")
+
+        val eventName = intent.getStringExtra("EVENT_NAME")
+        val eventImageUrl = intent.getStringExtra("EVENT_IMAGE_URL")
+
+        textViewName.text = eventName
+
+        // Carrega a imagem do evento no ImageView usando Glide
+        if (!eventImageUrl.isNullOrEmpty()) {
+            Glide.with(this)
+                .load(eventImageUrl)
+                .into(imageViewEvent)
+        }
+
+        // Gera o QR Code
+        generateQRCode(auth.currentUser?.email, eventId)
     }
 
-    override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {
-        // Não é necessário chamar drawQRCodeAndText() aqui, pois isso será feito
-        // quando o código QR for gerado.
-    }
-
-    override fun surfaceDestroyed(holder: SurfaceHolder) {}
-
-    override fun surfaceCreated(holder: SurfaceHolder) {
-        drawQRCode()
-    }
-
-    private fun drawQRCode() {
-        val userEmail = auth.currentUser?.email
-        val eventId = eventId // Armazena eventId em uma variável local imutável
-
+    private fun generateQRCode(userEmail: String?, eventId: String?) {
         if (userEmail != null && eventId != null) {
             try {
                 val text = "User: $userEmail, Event ID: $eventId"
-                val width = surfaceView.width
-                val height = surfaceView.height
+                val size = 500 // Define o tamanho do QR Code (largura e altura)
 
-                val bitMatrix = MultiFormatWriter().encode(text, BarcodeFormat.QR_CODE, width, height)
+                val bitMatrix = MultiFormatWriter().encode(text, BarcodeFormat.QR_CODE, size, size)
+                val bitmap = createBitmap(bitMatrix)
 
-                val canvas = holder.lockCanvas()
-                canvas.drawColor(Color.WHITE)
+                // Exibe o QR Code no ImageView
+                imageViewQRCodeEvent.setImageBitmap(bitmap)
 
-                val paint = Paint()
-                paint.color = Color.BLACK
-
-                // Desenha o código QR
-                for (x in 0 until width) {
-                    for (y in 0 until height) {
-                        if (bitMatrix[x, y]) {
-                            val rect = Rect(x, y, x + 1, y + 1)
-                            canvas.drawRect(rect, paint)
-                        }
-                    }
-                }
-
-                // Adiciona o texto "Verificado" abaixo do código QR
-                paint.textSize = 40f
-                canvas.drawText("Verificado", (width / 2).toFloat(), (height + 80).toFloat(), paint)
-
-                holder.unlockCanvasAndPost(canvas)
-
-                // Após a geração bem-sucedida do código QR, envie a descrição do usuário para o evento
+                // Após a geração bem-sucedida do QR Code, envie a descrição do usuário para o evento
                 updateUserEventParticipation(userEmail, eventId)
             } catch (e: WriterException) {
                 Log.e("EventDetailClientQRcode", "Error generating QR code", e)
@@ -93,9 +101,24 @@ class EventDetailClientQRcode : AppCompatActivity(), SurfaceHolder.Callback {
         }
     }
 
+    private fun createBitmap(bitMatrix: BitMatrix): Bitmap {
+        val width = bitMatrix.width
+        val height = bitMatrix.height
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+
+        for (x in 0 until width) {
+            for (y in 0 until height) {
+                bitmap.setPixel(x, y, if (bitMatrix[x, y]) Color.BLACK else Color.WHITE)
+            }
+        }
+
+        return bitmap
+    }
+
     private fun updateUserEventParticipation(userEmail: String, eventId: String) {
         // Atualiza os dados no Realtime Database
-        val userRef = database.getReference("event_participants").child(eventId).child(userEmail.replace(".", ","))
+        val userRef = database.getReference("event_participants").child(eventId)
+            .child(userEmail.replace(".", ","))
         val user = User(email = userEmail, id = eventId)
         userRef.setValue(user)
             .addOnSuccessListener {

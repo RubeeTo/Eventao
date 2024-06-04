@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.app3"
-    compileSdk = 34
+    compileSdkPreview = "VanillaIceCream"
 
     defaultConfig {
         applicationId = "com.example.app3"
