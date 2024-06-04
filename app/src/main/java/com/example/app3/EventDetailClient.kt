@@ -98,7 +98,7 @@ class EventDetailClient : AppCompatActivity() {
         }
 
         buttonEditEvent.setOnClickListener {
-            val intent = Intent(this, EditEvent::class.java)
+            val intent = Intent(this, CreateEvent::class.java)
             intent.putExtra("EVENT_ID", eventId)
             startActivity(intent)
         }

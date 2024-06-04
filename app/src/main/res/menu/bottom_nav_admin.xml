@@ -14,12 +14,7 @@
         android:icon="@drawable/scan_icon"
         app:showAsAction="always"
         />
-
-<!--    <item android:title="@string/txtEventList"-->
-<!--        android:id="@+id/btnEventList"-->
-<!--        android:icon="@drawable/event_list_icon"-->
-<!--        app:showAsAction="always"-->
-<!--        />-->
+    
 
     <item android:title="@string/txtAddEvent"
         android:id="@+id/btnAddEvent"

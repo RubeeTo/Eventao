@@ -162,28 +162,37 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewDescription"
             tools:layout_editor_absoluteX="99dp" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonParticipants"
-            style="@style/buttonLg"
-            android:layout_width="300dp"
+            style="@style/buttonDetail"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn_event_detail"
             android:text="Participantes"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/space" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
 
-        <Button
-            android:id="@+id/buttonEditEvent"
-            style="@style/buttonLg"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Editar Evento"
+        <ImageView
+            android:id="@+id/lineEventDetail2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="?actionBarDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonParticipants" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonEditEvent"
+            style="@style/buttonDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Editar evento"
+            app:layout_constraintTop_toBottomOf="@+id/lineEventDetail2"
+            tools:layout_editor_absoluteX="16dp" />
 
         <Button
             android:id="@+id/buttonSubscribe"

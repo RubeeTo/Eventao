@@ -5,19 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
 
-class CreateEventAdmin : Fragment() {
+class FragmentCreateEvent : Fragment() {
 
-    private lateinit var editTextName: EditText
-    private lateinit var editTextDescription: EditText
-    private lateinit var editTextLocation: EditText
-    private lateinit var editTextDate: EditText
-    private lateinit var imageViewEvent: ImageView
-    private lateinit var buttonSave: Button
-    private lateinit var buttonCancel: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,14 +59,6 @@ class CreateEventAdmin : Fragment() {
 //                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
 //            }
 //        }
-
-
-
-
-
-
-
-
 
 
 

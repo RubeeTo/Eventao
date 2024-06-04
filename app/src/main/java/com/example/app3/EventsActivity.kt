@@ -1,11 +1,8 @@
 package com.example.app3
 
-import android.content.Intent
 import android.os.Bundle
-
-import android.widget.Button
-
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -13,69 +10,43 @@ import com.google.firebase.database.*
 
 class EventsActivity : AppCompatActivity() {
 
-    private lateinit var database: DatabaseReference
-    private lateinit var recyclerViewEvents: RecyclerView
-    private lateinit var eventsList: MutableList<Event>
-    private lateinit var eventAdapter: EventAdapter
-    private lateinit var addEventButton: Button
+//    private lateinit var database: DatabaseReference
+//    private lateinit var recyclerViewEvents: RecyclerView
+//    private lateinit var eventsList: MutableList<Event>
+//    private lateinit var eventAdapter: EventAdapter
+//    private lateinit var addEventButton: Button
 
     private lateinit var bottomNavigationView: BottomNavigationView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main_admin)
 
-        setContentView(R.layout.activity_events)
-
-        recyclerViewEvents = findViewById(R.id.recyclerViewEvents)
-        recyclerViewEvents.layoutManager = GridLayoutManager(this, 2)
-        eventsList = mutableListOf()
-
-        eventAdapter = EventAdapter(this, eventsList)
-        recyclerViewEvents.adapter = eventAdapter
-
-        addEventButton = findViewById(R.id.addEventButton)
-        addEventButton.setOnClickListener {
-            val intent = Intent(this, EditEvent::class.java)
-            startActivity(intent)
-        }
-
-        database = FirebaseDatabase.getInstance().getReference("events")
-
-        database.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                eventsList.clear()
-                for (eventSnapshot in snapshot.children) {
-                    val event = eventSnapshot.getValue(Event::class.java)
-                    if (event != null) {
-                        eventsList.add(event)
-                    }
-                }
-                eventAdapter.notifyDataSetChanged()
-            }
-
-
-
+        bottomNavigationView = findViewById(R.id.bottomNavigationAdmin)
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
-//                R.id.btnHome -> {
+                R.id.btnHome -> {
+                    replaceFragment(HomeAdmin())
+                    true
+                }
+                R.id.btnScan -> {
+                    replaceFragment(HomeAdmin())
+                    true
+                }
+//                R.id.btnEventList -> {
 //                    replaceFragment(HomeAdmin())
 //                    true
 //                }
-//                R.id.btnAddEvent -> {
-//                    replaceFragment(CreateEventAdmin())
-//                    true
-//                }
+                R.id.btnAddEvent -> {
+                    replaceFragment(HomeAdmin())
+                    true
+                }
+
                 else -> false
             }
         }
-
-        // Define o fragmento inicial
-        if (savedInstanceState == null) {
-            replaceFragment(HomeAdmin())
-        }
-
+        
 
 //        recyclerViewEvents = findViewById(R.id.recyclerViewEvents)
 //        recyclerViewEvents.layoutManager = GridLayoutManager(this, 2)
@@ -83,7 +54,13 @@ class EventsActivity : AppCompatActivity() {
 //
 //        eventAdapter = EventAdapter(this, eventsList)
 //        recyclerViewEvents.adapter = eventAdapter
-//
+
+//        addEventButton = findViewById(R.id.addEventButton)
+//        addEventButton.setOnClickListener {
+//            val intent = Intent(this, CreateEvent::class.java)
+//            startActivity(intent)
+//        }
+
 //        database = FirebaseDatabase.getInstance().getReference("events")
 //
 //        database.addValueEventListener(object : ValueEventListener {
@@ -103,13 +80,17 @@ class EventsActivity : AppCompatActivity() {
 //            }
 //        })
 
+
+
+
+
     }
+
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.frameLayoutNavigationAdmin, fragment)
             .commit()
     }
-
 
 }

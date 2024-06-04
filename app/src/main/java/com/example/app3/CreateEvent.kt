@@ -7,13 +7,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
 
-class EditEvent : AppCompatActivity() {
+class CreateEvent : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_event)
+        setContentView(R.layout.activity_create_event)
 
         val editTextEventName: EditText = findViewById(R.id.editTextEventName)
         val editTextEventDescription: EditText = findViewById(R.id.editTextEventDescription)
