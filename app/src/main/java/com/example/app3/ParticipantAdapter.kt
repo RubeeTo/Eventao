@@ -17,18 +17,18 @@ class ParticipantAdapter(private val participantList: List<ParticipantActivity.U
 
     override fun onBindViewHolder(holder: ParticipantViewHolder, position: Int) {
         val currentItem = participantList[position]
-        holder.textViewName.text = currentItem.name
+//        holder.textViewName.text = currentItem.name
         holder.textViewEmail.text = currentItem.email
-        holder.textViewCPF.text = currentItem.cpf
+//        holder.textViewCPF.text = currentItem.cpf
         holder.textViewId.text = currentItem.id
     }
 
     override fun getItemCount() = participantList.size
 
     class ParticipantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textViewName: TextView = itemView.findViewById(R.id.textViewParticipantName)
+//        val textViewName: TextView = itemView.findViewById(R.id.textViewParticipantName)
         val textViewEmail: TextView = itemView.findViewById(R.id.textViewParticipantEmail)
-        val textViewCPF: TextView = itemView.findViewById(R.id.textViewParticipantCPF)
+//        val textViewCPF: TextView = itemView.findViewById(R.id.textViewParticipantCPF)
         val textViewId: TextView = itemView.findViewById(R.id.textViewParticipantId)
     }
 }
