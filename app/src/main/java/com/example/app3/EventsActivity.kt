@@ -1,17 +1,12 @@
 package com.example.app3
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class EventsActivity : AppCompatActivity() {
-
-//    private lateinit var database: DatabaseReference
-//    private lateinit var recyclerViewEvents: RecyclerView
-//    private lateinit var eventsList: MutableList<Event>
-//    private lateinit var eventAdapter: EventAdapter
-//    private lateinit var addEventButton: Button
 
     private lateinit var bottomNavigationView: BottomNavigationView
 
@@ -28,55 +23,21 @@ class EventsActivity : AppCompatActivity() {
                     true
                 }
                 R.id.btnScan -> {
-//                    replaceFragment(FragmentHome())
+                    // Abre a atividade de leitura de QR code
+                    startActivity(Intent(this, QRCodeReaderActivity::class.java))
                     true
                 }
                 R.id.btnAddEvent -> {
                     replaceFragment(FragmentCreateEvent())
                     true
                 }
-
                 else -> false
             }
         }
 
-//        Define o fragmento inicial
-                if (savedInstanceState == null) {
-                    replaceFragment(FragmentHome())
-                }
-
-//        recyclerViewEvents = findViewById(R.id.recyclerViewEvents)
-//        recyclerViewEvents.layoutManager = GridLayoutManager(this, 2)
-//        eventsList = mutableListOf()
-//
-//        eventAdapter = EventAdapter(this, eventsList)
-//        recyclerViewEvents.adapter = eventAdapter
-
-//        addEventButton = findViewById(R.id.addEventButton)
-//        addEventButton.setOnClickListener {
-//            val intent = Intent(this, EditEvent::class.java)
-//            startActivity(intent)
-//        }
-
-//        database = FirebaseDatabase.getInstance().getReference("events")
-//
-//        database.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                eventsList.clear()
-//                for (eventSnapshot in snapshot.children) {
-//                    val event = eventSnapshot.getValue(Event::class.java)
-//                    if (event != null) {
-//                        eventsList.add(event)
-//                    }
-//                }
-//                eventAdapter.notifyDataSetChanged()
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                // Handle database error
-//            }
-//        })
-
+        if (savedInstanceState == null) {
+            replaceFragment(FragmentHome())
+        }
     }
 
     private fun replaceFragment(fragment: Fragment) {
@@ -84,5 +45,4 @@ class EventsActivity : AppCompatActivity() {
             .replace(R.id.frameLayoutNavigationAdmin, fragment)
             .commit()
     }
-
 }

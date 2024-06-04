@@ -1,10 +1,11 @@
-// QRCodeReaderActivity.kt
 package com.example.app3
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -27,7 +28,6 @@ class QRCodeReaderActivity : AppCompatActivity() {
         integrator.initiateScan()
     }
 
-    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result: IntentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
@@ -44,28 +44,34 @@ class QRCodeReaderActivity : AppCompatActivity() {
 
     private fun verifyParticipant(qrCodeData: String) {
         val database = FirebaseDatabase.getInstance().reference
-        database.child("event_registrations").addListenerForSingleValueEvent(object :
-            ValueEventListener {
+        val eventId = qrCodeData.split("Event ID: ")[1]
+        val userEmail = FirebaseAuth.getInstance().currentUser?.email
+        val sanitizedEmail = userEmail?.replace(".", ",")
+        val participantRef = database.child("event_participants").child(eventId).child(sanitizedEmail ?: "")
+
+        participantRef.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                var found = false
-                for (eventSnapshot in snapshot.children) {
-                    for (participantSnapshot in eventSnapshot.children) {
-                        if (participantSnapshot.child("cpf").getValue(String::class.java) == qrCodeData) {
-                            found = true
-                            break
+                if (snapshot.exists()) {
+                    // O participante está cadastrado no evento, então pode ser autenticado
+                    participantRef.child("status").setValue("autenticado")
+                        .addOnSuccessListener {
+                            Toast.makeText(this@QRCodeReaderActivity, "Usuário autenticado!", Toast.LENGTH_LONG).show()
+                            val participantEmail = snapshot.child("email").getValue(String::class.java)
+                            val status = snapshot.child("status").getValue(String::class.java)
+                            findViewById<TextView>(R.id.textViewParticipantEmail).text = "Email: $participantEmail"
+                            findViewById<TextView>(R.id.textViewStatus).text = "Status: $status"
                         }
-                    }
-                    if (found) break
-                }
-                if (found) {
-                    Toast.makeText(this@QRCodeReaderActivity, "Participante encontrado!", Toast.LENGTH_LONG).show()
+                        .addOnFailureListener { e ->
+                            Toast.makeText(this@QRCodeReaderActivity, "Erro ao atualizar status: ${e.message}", Toast.LENGTH_LONG).show()
+                        }
                 } else {
-                    Toast.makeText(this@QRCodeReaderActivity, "Participante não encontrado.", Toast.LENGTH_LONG).show()
+                    // O participante não está cadastrado no evento, exibe mensagem de erro
+                    Toast.makeText(this@QRCodeReaderActivity, "Usuário não cadastrado neste evento.", Toast.LENGTH_LONG).show()
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Toast.makeText(this@QRCodeReaderActivity, "Erro ao acessar o banco de dados.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this@QRCodeReaderActivity, "Erro ao acessar o banco de dados: ${error.message}", Toast.LENGTH_LONG).show()
             }
         })
     }
