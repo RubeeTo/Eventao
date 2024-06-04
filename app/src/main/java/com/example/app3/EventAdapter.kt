@@ -22,6 +22,7 @@ class EventAdapter(private val context: Context, private val eventsList: List<Ev
         val event = eventsList[position]
         holder.textViewEventName.text = event.name
         holder.textViewEventDate.text = event.date
+        holder.textViewLocalName.text = event.localName
 
         Glide.with(context)
             .load(event.imageUrl)
@@ -29,7 +30,7 @@ class EventAdapter(private val context: Context, private val eventsList: List<Ev
             .into(holder.imageViewEvent)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(context, EventDetailClient::class.java).apply {
+            val intent = Intent(context, EventDetail::class.java).apply {
                 putExtra("EVENT_ID", event.id.toString())
                 putExtra("EVENT_NAME", event.name)
                 putExtra("EVENT_DESCRIPTION", event.description)
@@ -50,8 +51,10 @@ class EventAdapter(private val context: Context, private val eventsList: List<Ev
     }
 
     class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val textViewEventName: TextView = itemView.findViewById(R.id.textViewEventName)
-        val textViewEventDate: TextView = itemView.findViewById(R.id.textViewEventDate)
         val imageViewEvent: ImageView = itemView.findViewById(R.id.imageViewEvent)
+        val textViewEventName: TextView = itemView.findViewById(R.id.textViewEventName)
+        val textViewLocalName: TextView = itemView.findViewById(R.id.textViewLocalName)
+        val textViewEventDate: TextView = itemView.findViewById(R.id.textViewEventDate)
+
     }
 }

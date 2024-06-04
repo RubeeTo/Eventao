@@ -5,28 +5,29 @@
     android:id="@+id/mainAdmin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainAdmin">
+    tools:context=".EventsActivity">
 
     <FrameLayout
         android:id="@+id/frameLayoutNavigationAdmin"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:padding="25dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationAdmin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationAdmin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/backgorund_0"
+        android:visibility="visible"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_admin"
-        android:background="@drawable/backgorund_0"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        />
+        app:menu="@menu/bottom_nav_admin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
