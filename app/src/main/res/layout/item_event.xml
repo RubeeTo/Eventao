@@ -35,7 +35,7 @@
         android:layout_marginTop="10dp"
         android:hint="Bacanau de Zeus"
         android:textColor="@color/blue4"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <TextView
@@ -64,3 +64,6 @@
         android:textSize="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

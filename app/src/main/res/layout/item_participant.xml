@@ -8,7 +8,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +26,7 @@
             android:layout_height="65dp"
             android:layout_marginEnd="28dp"
             app:srcCompat="@drawable/person_icon"
-            app:tint="@color/blue4"/>
+            app:tint="@color/blue4" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,32 +35,26 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewParticipantName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="Nome do Participante" />
-
-            <TextView
                 android:id="@+id/textViewParticipantEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="Email do participante" />
-
-            <TextView
-                android:id="@+id/textViewParticipantCPF"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="Cpf do participante" />
+                android:text="Nome do Participante"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textViewParticipantId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="ID do participante" />
+                android:text="ID do participante"
+                android:textSize="14sp" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status de autenticação"
+                android:textSize="14sp" />
+
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
