@@ -24,7 +24,7 @@ class FragmentHome : Fragment() {
         val view = inflater.inflate(R.layout.activity_events, container, false)
 
         recyclerViewEvents = view.findViewById(R.id.recyclerViewEvents)
-        recyclerViewEvents.layoutManager = GridLayoutManager(context, 2)
+        recyclerViewEvents.layoutManager = GridLayoutManager(context, 1)
         eventsList = mutableListOf()
 
         eventAdapter = EventAdapter(requireContext(), eventsList)

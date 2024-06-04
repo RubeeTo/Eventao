@@ -65,7 +65,7 @@ class LoginClient : AppCompatActivity() {
         }
 
         buttonAdminAcess.setOnClickListener {
-            val intent = Intent(this, MainAdmin::class.java)
+            val intent = Intent(this, EventsActivity::class.java)
             startActivity(intent)
         }
     }

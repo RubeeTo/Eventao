@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".FragmentCreateEvent">
-
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarHeader"
@@ -18,8 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/blue3"
-            app:navigationIcon="@drawable/back_arrow"
-            app:title="@string/txtEditEvento"
+
+            app:navigationIcon="@drawable/exit_icon"
+            app:title="@string/txtAddEvent"
             app:titleTextColor="@color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -27,20 +30,22 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/appBarHeader"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/appBarHeader">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="16dp"
+            >
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="16dp"/>
+                android:layout_height="16dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -49,14 +54,14 @@
 
             <EditText
                 android:id="@+id/editTextEventName"
+                style="@style/inputAddEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/txtExpNameEvent"
-                style="@style/inputAddEvent" />
+                android:hint="@string/txtExpNameEvent" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="8dp"/>
+                android:layout_height="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -65,14 +70,14 @@
 
             <EditText
                 android:id="@+id/editTextLocalName"
+                style="@style/inputAddEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/txtExpLocalEvent"
-                style="@style/inputAddEvent" />
+                android:hint="@string/txtExpLocalEvent" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="8dp"/>
+                android:layout_height="8dp" />
 
             <TextView
                 android:id="@+id/textViewCityState"
@@ -82,14 +87,14 @@
 
             <EditText
                 android:id="@+id/editTextCityState"
+                style="@style/inputAddEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/txtExpCity_State"
-                style="@style/inputAddEvent" />
+                android:hint="@string/txtExpCity_State" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="8dp"/>
+                android:layout_height="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -98,14 +103,14 @@
 
             <EditText
                 android:id="@+id/editTextEventStreetNumber"
+                style="@style/inputAddEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Insira o número da rua"
-                style="@style/inputAddEvent" />
+                android:hint="Insira o número da rua" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="8dp"/>
+                android:layout_height="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -114,14 +119,14 @@
 
             <EditText
                 android:id="@+id/editTextEventDate"
+                style="@style/inputAddEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/txtExpDateEvent"
-                style="@style/inputAddEvent" />
+                android:hint="@string/txtExpDateEvent" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="8dp"/>
+                android:layout_height="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -130,14 +135,14 @@
 
             <EditText
                 android:id="@+id/editTextHour"
+                style="@style/inputAddEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/txtExpHourEvent"
-                style="@style/inputAddEvent" />
+                android:hint="@string/txtExpHourEvent" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="8dp"/>
+                android:layout_height="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -146,14 +151,14 @@
 
             <EditText
                 android:id="@+id/editTextEventDescription"
+                style="@style/inputAddEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/txtExpSynopsisEvent"
-                style="@style/inputAddEvent" />
+                android:hint="@string/txtExpSynopsisEvent" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="8dp"/>
+                android:layout_height="8dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -162,14 +167,14 @@
 
             <EditText
                 android:id="@+id/editTextEventImageUrl"
+                style="@style/inputAddEvent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Insira o URL da imagem"
-                style="@style/inputAddEvent" />
+                android:hint="Insira o URL da imagem" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="16dp"/>
+                android:layout_height="16dp" />
 
             <Button
                 android:id="@+id/buttonAddEvent"
@@ -177,13 +182,12 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Atualizar" />
+                android:text="Criar evento" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="16dp"/>
+                android:layout_height="16dp" />
 
         </LinearLayout>
     </ScrollView>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

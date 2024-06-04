@@ -8,18 +8,20 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
 class FragmentCreateEvent : Fragment() {
 
     private lateinit var database: DatabaseReference
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_create_event, container, false)
+        return inflater.inflate(R.layout.fragment_create_event, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,8 +68,8 @@ class FragmentCreateEvent : Fragment() {
                         database.child(eventId).setValue(event).addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 Toast.makeText(requireContext(), "Event added successfully", Toast.LENGTH_SHORT).show()
-                                // Use requireActivity() para terminar a atividade se necessário
-                                requireActivity().finish()
+                                // Navigate back or clear fields
+                                requireActivity().supportFragmentManager.popBackStack()
                             } else {
                                 Toast.makeText(requireContext(), "Failed to add event", Toast.LENGTH_SHORT).show()
                             }

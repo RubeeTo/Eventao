@@ -28,22 +28,22 @@ class EventsActivity : AppCompatActivity() {
                     true
                 }
                 R.id.btnScan -> {
-                    replaceFragment(FragmentHome())
+//                    replaceFragment(FragmentHome())
                     true
                 }
-//                R.id.btnEventList -> {
-//                    replaceFragment(FragmentHome())
-//                    true
-//                }
                 R.id.btnAddEvent -> {
-                    replaceFragment(FragmentHome())
+                    replaceFragment(FragmentCreateEvent())
                     true
                 }
 
                 else -> false
             }
         }
-        
+
+//        Define o fragmento inicial
+                if (savedInstanceState == null) {
+                    replaceFragment(FragmentHome())
+                }
 
 //        recyclerViewEvents = findViewById(R.id.recyclerViewEvents)
 //        recyclerViewEvents.layoutManager = GridLayoutManager(this, 2)
@@ -54,7 +54,7 @@ class EventsActivity : AppCompatActivity() {
 
 //        addEventButton = findViewById(R.id.addEventButton)
 //        addEventButton.setOnClickListener {
-//            val intent = Intent(this, CreateEvent::class.java)
+//            val intent = Intent(this, EditEvent::class.java)
 //            startActivity(intent)
 //        }
 
@@ -78,7 +78,6 @@ class EventsActivity : AppCompatActivity() {
 //        })
 
     }
-
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()

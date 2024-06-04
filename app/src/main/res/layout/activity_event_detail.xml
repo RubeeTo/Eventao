@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -89,7 +90,7 @@
 
             <TextView
                 android:id="@+id/textViewLocalStreetNumber"
-                style="@style.textEventDetails"
+                style="@style/textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rua, número"
@@ -98,7 +99,7 @@
 
             <TextView
                 android:id="@+id/textViewCityState"
-                style="@style.textEventDetails"
+                style="@style/textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cidade/Estado"
@@ -116,7 +117,7 @@
 
             <TextView
                 android:id="@+id/textViewDate"
-                style="@style.textEventDetails"
+                style="@style/textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Data do Evento"
@@ -126,7 +127,7 @@
 
             <TextView
                 android:id="@+id/textViewHour"
-                style="@style.textEventDetails"
+                style="@style/textEventDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hora do Evento"

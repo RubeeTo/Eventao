@@ -98,33 +98,59 @@ class EventDetail : AppCompatActivity() {
         }
 
         buttonEditEvent.setOnClickListener {
-            val intent = Intent(this, CreateEvent::class.java)
+            val intent = Intent(this, EditEvent::class.java)
             intent.putExtra("EVENT_ID", eventId)
             startActivity(intent)
         }
 
+
+//        buttonSubscribe.setOnClickListener {
+//            Log.d("EventDetail", "Button Subscribe clicked")
+//            val user = auth.currentUser
+//            if (user != null) {
+//                Log.d("EventDetail", "User is not null: ${user.email}")
+//            } else {
+//                Log.d("EventDetail", "User is null")
+//            }
+//            if (eventId != null) {
+//                Log.d("EventDetail", "EventId is not null: $eventId")
+//            } else {
+//                Log.d("EventDetail", "EventId is null")
+//            }
+//            if (user != null && eventId != null) {
+//                Log.d("EventDetail", "User and eventId are not null")
+//                val userEmail = user.email
+//                if (userEmail != null) {
+//                    subscribeToEvent(eventId, userEmail)
+//                    val intent = Intent(this, EventDetailClientQRcode::class.java)
+//                    intent.putExtra("USER_EMAIL", userEmail)
+//                    intent.putExtra("EVENT_ID", eventId)
+//                    Log.d("EventDetail", "Starting QrCodeActivity with email: $userEmail")
+//                    startActivity(intent)
+//                } else {
+//                    Log.d("EventDetail", "User email is null")
+//                }
+//            } else {
+//                Log.d("EventDetail", "User or eventId is null")
+//            }
+//        }
+
         buttonSubscribe.setOnClickListener {
-            Log.d("EventDetail", "Button Subscribe clicked")
             val user = auth.currentUser
-            if (user != null) {
-                Log.d("EventDetail", "User is not null: ${user.email}")
-            } else {
-                Log.d("EventDetail", "User is null")
-            }
-            if (eventId != null) {
-                Log.d("EventDetail", "EventId is not null: $eventId")
-            } else {
-                Log.d("EventDetail", "EventId is null")
-            }
             if (user != null && eventId != null) {
-                Log.d("EventDetail", "User and eventId are not null")
                 val userEmail = user.email
                 if (userEmail != null) {
                     subscribeToEvent(eventId, userEmail)
                     val intent = Intent(this, EventDetailClientQRcode::class.java)
                     intent.putExtra("USER_EMAIL", userEmail)
                     intent.putExtra("EVENT_ID", eventId)
-                    Log.d("EventDetail", "Starting QrCodeActivity with email: $userEmail")
+                    intent.putExtra("EVENT_NAME", eventName)
+                    intent.putExtra("EVENT_DATE", eventDate)
+                    intent.putExtra("EVENT_HOUR", eventHour)
+                    intent.putExtra("EVENT_LOCAL_NAME", eventLocalName)
+                    intent.putExtra("EVENT_STREET_NUMBER", eventStreetNumber)
+                    intent.putExtra("EVENT_CITY_STATE", eventCityState)
+                    intent.putExtra("EVENT_IMAGE_URL", eventImageUrl)
                     startActivity(intent)
                 } else {
                     Log.d("EventDetail", "User email is null")
@@ -133,6 +159,10 @@ class EventDetail : AppCompatActivity() {
                 Log.d("EventDetail", "User or eventId is null")
             }
         }
+
+
+
+
     }
 
     private fun subscribeToEvent(eventId: String, userEmail: String) {

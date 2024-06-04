@@ -47,14 +47,10 @@
 
 
         <activity
-            android:name=".CreateEvent"
+            android:name=".EditEvent"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity
-            android:name=".MainAdmin"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".QRCodeReaderActivity"

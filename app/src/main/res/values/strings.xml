@@ -25,6 +25,7 @@
     <string name="txtHome">Home</string>
     <string name="txtQRCode">QRCode</string>
     <string name="txtAddEvent">Criar evento</string>
+    <string name="txtMainEvent">Evento vigênte</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
