@@ -95,12 +95,14 @@ class EventDetail : AppCompatActivity() {
             val intent = Intent(this, ParticipantActivity::class.java)
             intent.putExtra("EVENT_ID", eventId)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
 
         buttonEditEvent.setOnClickListener {
             val intent = Intent(this, EditEvent::class.java)
             intent.putExtra("EVENT_ID", eventId)
             startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
         }
 
 
@@ -152,6 +154,7 @@ class EventDetail : AppCompatActivity() {
                     intent.putExtra("EVENT_CITY_STATE", eventCityState)
                     intent.putExtra("EVENT_IMAGE_URL", eventImageUrl)
                     startActivity(intent)
+                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
                 } else {
                     Log.d("EventDetail", "User email is null")
                 }

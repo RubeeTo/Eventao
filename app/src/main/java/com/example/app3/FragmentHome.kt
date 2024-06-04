@@ -37,6 +37,7 @@ class FragmentHome : Fragment() {
                 eventsList.clear()
                 for (eventSnapshot in snapshot.children) {
                     val event = eventSnapshot.getValue(Event::class.java)
+
                     if (event != null) {
                         eventsList.add(event)
                     }
