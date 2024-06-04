@@ -26,5 +26,7 @@
 
     <color name="test1">#E52525</color>
     <color name="test2">#63E525</color>
+    <color name="green">#44FF00</color>
+    <color name="red">#FF1100</color>
 
 </resources>
