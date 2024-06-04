@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
-class HomeAdmin : Fragment() {
+class FragmentHome : Fragment() {
 
     private lateinit var database: DatabaseReference
     private lateinit var recyclerViewEvents: RecyclerView

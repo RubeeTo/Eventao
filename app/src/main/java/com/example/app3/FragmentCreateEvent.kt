@@ -1,65 +1,107 @@
 package com.example.app3
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import com.google.firebase.database.*
 
 class FragmentCreateEvent : Fragment() {
 
+    private lateinit var database: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_create_event_admin, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.activity_create_event, container, false)
     }
 
-//        editTextName = findViewById(R.id.editTextName)
-//        editTextDescription = findViewById(R.id.editTextDescription)
-//        editTextLocation = findViewById(R.id.editTextLocalName)
-//        editTextDate = findViewById(R.id.editTextDate)
-//        imageViewEvent = findViewById(R.id.imageViewEvent)
-//        buttonSave = findViewById(R.id.buttonSave)
-//
-//        val calendar = Calendar.getInstance()
-//        val datePicker = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-//            editTextDate.setText("$dayOfMonth/${month + 1}/$year")
-//        }
-//
-//        editTextDate.setOnClickListener {
-//            DatePickerDialog(
-//                this, datePicker, calendar.get(Calendar.YEAR),
-//                calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)
-//            ).show()
-//        }
-//
-//        buttonSave.setOnClickListener {
-//            val name = editTextName.text.toString()
-//            val description = editTextDescription.text.toString()
-//            val location = editTextLocation.text.toString()
-//            val date = editTextDate.text.toString()
-//            val imageUrl = "" // URL da imagem, se disponível
-//
-//            if (name.isNotEmpty() && description.isNotEmpty() && location.isNotEmpty() && date.isNotEmpty()) {
-//                val database = FirebaseDatabase.getInstance().reference
-//                val eventId = database.child("events").push().key ?: return@setOnClickListener
-//                val event = Event(eventId.toInt(), name, description, date, imageUrl)
-//                database.child("events").child(eventId).setValue(event)
-//                    .addOnCompleteListener {
-//                        if (it.isSuccessful) {
-//                            Toast.makeText(this, "Evento criado com sucesso.", Toast.LENGTH_SHORT).show()
-//                            finish()
-//                        } else {
-//                            Toast.makeText(this, "Erro ao criar evento.", Toast.LENGTH_SHORT).show()
-//                        }
-//                    }
-//            } else {
-//                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show()
-//            }
-//        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        val editTextEventName: EditText = view.findViewById(R.id.editTextEventName)
+        val editTextEventDescription: EditText = view.findViewById(R.id.editTextEventDescription)
+        val editTextEventDate: EditText = view.findViewById(R.id.editTextEventDate)
+        val editTextEventImageUrl: EditText = view.findViewById(R.id.editTextEventImageUrl)
+        val editTextEventHour: EditText = view.findViewById(R.id.editTextHour)
+        val editTextEventLocalName: EditText = view.findViewById(R.id.editTextLocalName)
+        val editTextEventStreetNumber: EditText = view.findViewById(R.id.editTextEventStreetNumber)
+        val editTextEventCityState: EditText = view.findViewById(R.id.editTextCityState)
+        val buttonAddEvent: Button = view.findViewById(R.id.buttonAddEvent)
 
+        database = FirebaseDatabase.getInstance().getReference("events")
 
+        buttonAddEvent.setOnClickListener {
+            val eventName = editTextEventName.text.toString()
+            val eventDescription = editTextEventDescription.text.toString()
+            val eventDate = editTextEventDate.text.toString()
+            val eventImageUrl = editTextEventImageUrl.text.toString()
+            val eventHour = editTextEventHour.text.toString()
+            val eventLocalName = editTextEventLocalName.text.toString()
+            val eventStreetNumber = editTextEventStreetNumber.text.toString()
+            val eventCityState = editTextEventCityState.text.toString()
+
+            if (eventName.isNotEmpty() && eventDescription.isNotEmpty() && eventDate.isNotEmpty() && eventImageUrl.isNotEmpty() &&
+                eventHour.isNotEmpty() && eventLocalName.isNotEmpty() && eventStreetNumber.isNotEmpty() && eventCityState.isNotEmpty()) {
+                getNextEventName { eventId ->
+                    if (eventId != null) {
+                        val event = Event(
+                            id = eventId.hashCode(),
+                            name = eventName,
+                            description = eventDescription,
+                            date = eventDate,
+                            imageUrl = eventImageUrl,
+                            hour = eventHour,
+                            localName = eventLocalName,
+                            streetNumber = eventStreetNumber,
+                            cityState = eventCityState
+                        )
+
+                        database.child(eventId).setValue(event).addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Toast.makeText(requireContext(), "Event added successfully", Toast.LENGTH_SHORT).show()
+                                // Use requireActivity() para terminar a atividade se necessário
+                                requireActivity().finish()
+                            } else {
+                                Toast.makeText(requireContext(), "Failed to add event", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    } else {
+                        Toast.makeText(requireContext(), "Failed to generate event ID", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } else {
+                Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun getNextEventName(callback: (String?) -> Unit) {
+        database.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var maxNumber = 0
+                for (child in snapshot.children) {
+                    val key = child.key
+                    if (key != null && key.startsWith("event")) {
+                        val number = key.removePrefix("event").toIntOrNull()
+                        if (number != null && number > maxNumber) {
+                            maxNumber = number
+                        }
+                    }
+                }
+                val nextNumber = maxNumber + 1
+                callback("event$nextNumber")
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                callback(null)
+            }
+        })
+    }
 }

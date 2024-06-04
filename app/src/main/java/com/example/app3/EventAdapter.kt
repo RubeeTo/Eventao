@@ -29,7 +29,7 @@ class EventAdapter(private val context: Context, private val eventsList: List<Ev
             .into(holder.imageViewEvent)
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(context, EventDetailClient::class.java).apply {
+            val intent = Intent(context, EventDetail::class.java).apply {
                 putExtra("EVENT_ID", event.id.toString())
                 putExtra("EVENT_NAME", event.name)
                 putExtra("EVENT_DESCRIPTION", event.description)

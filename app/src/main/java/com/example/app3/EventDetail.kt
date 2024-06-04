@@ -12,14 +12,14 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class EventDetailClient : AppCompatActivity() {
+class EventDetail : AppCompatActivity() {
 
     private lateinit var db: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_event_detail_client)
+        setContentView(R.layout.activity_event_detail)
 
         val textViewName = findViewById<TextView>(R.id.textViewName)
         val textViewDescription = findViewById<TextView>(R.id.textViewDescription)
@@ -63,15 +63,15 @@ class EventDetailClient : AppCompatActivity() {
         val eventCityState = intent.getStringExtra("EVENT_CITY_STATE") // Novo campo
         val eventImageUrl = intent.getStringExtra("EVENT_IMAGE_URL")
 
-        Log.d("EventDetailClient", "Received eventId: $eventId")
-        Log.d("EventDetailClient", "Received eventName: $eventName")
-        Log.d("EventDetailClient", "Received eventDescription: $eventDescription")
-        Log.d("EventDetailClient", "Received eventDate: $eventDate")
-        Log.d("EventDetailClient", "Received eventHour: $eventHour")
-        Log.d("EventDetailClient", "Received eventLocalName: $eventLocalName")
-        Log.d("EventDetailClient", "Received eventStreetNumber: $eventStreetNumber")
-        Log.d("EventDetailClient", "Received eventCityState: $eventCityState")
-        Log.d("EventDetailClient", "Received eventImageUrl: $eventImageUrl")
+        Log.d("EventDetail", "Received eventId: $eventId")
+        Log.d("EventDetail", "Received eventName: $eventName")
+        Log.d("EventDetail", "Received eventDescription: $eventDescription")
+        Log.d("EventDetail", "Received eventDate: $eventDate")
+        Log.d("EventDetail", "Received eventHour: $eventHour")
+        Log.d("EventDetail", "Received eventLocalName: $eventLocalName")
+        Log.d("EventDetail", "Received eventStreetNumber: $eventStreetNumber")
+        Log.d("EventDetail", "Received eventCityState: $eventCityState")
+        Log.d("EventDetail", "Received eventImageUrl: $eventImageUrl")
 
         textViewName.text = eventName
         textViewDescription.text = eventDescription
@@ -104,33 +104,33 @@ class EventDetailClient : AppCompatActivity() {
         }
 
         buttonSubscribe.setOnClickListener {
-            Log.d("EventDetailClient", "Button Subscribe clicked")
+            Log.d("EventDetail", "Button Subscribe clicked")
             val user = auth.currentUser
             if (user != null) {
-                Log.d("EventDetailClient", "User is not null: ${user.email}")
+                Log.d("EventDetail", "User is not null: ${user.email}")
             } else {
-                Log.d("EventDetailClient", "User is null")
+                Log.d("EventDetail", "User is null")
             }
             if (eventId != null) {
-                Log.d("EventDetailClient", "EventId is not null: $eventId")
+                Log.d("EventDetail", "EventId is not null: $eventId")
             } else {
-                Log.d("EventDetailClient", "EventId is null")
+                Log.d("EventDetail", "EventId is null")
             }
             if (user != null && eventId != null) {
-                Log.d("EventDetailClient", "User and eventId are not null")
+                Log.d("EventDetail", "User and eventId are not null")
                 val userEmail = user.email
                 if (userEmail != null) {
                     subscribeToEvent(eventId, userEmail)
                     val intent = Intent(this, EventDetailClientQRcode::class.java)
                     intent.putExtra("USER_EMAIL", userEmail)
                     intent.putExtra("EVENT_ID", eventId)
-                    Log.d("EventDetailClient", "Starting QrCodeActivity with email: $userEmail")
+                    Log.d("EventDetail", "Starting QrCodeActivity with email: $userEmail")
                     startActivity(intent)
                 } else {
-                    Log.d("EventDetailClient", "User email is null")
+                    Log.d("EventDetail", "User email is null")
                 }
             } else {
-                Log.d("EventDetailClient", "User or eventId is null")
+                Log.d("EventDetail", "User or eventId is null")
             }
         }
     }
@@ -143,10 +143,10 @@ class EventDetailClient : AppCompatActivity() {
         db.collection("subscriptions")
             .add(eventSubscription)
             .addOnSuccessListener { documentReference ->
-                Log.d("EventDetailClient", "Subscription successfully written")
+                Log.d("EventDetail", "Subscription successfully written")
             }
             .addOnFailureListener { e ->
-                Log.w("EventDetailClient", "Error adding document", e)
+                Log.w("EventDetail", "Error adding document", e)
             }
     }
 }

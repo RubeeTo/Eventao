@@ -45,10 +45,6 @@
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity
-            android:name=".EventDetailAdmin"
-            android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".CreateEvent"
@@ -76,7 +72,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
-            android:name=".EventDetailClient"
+            android:name=".EventDetail"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
 

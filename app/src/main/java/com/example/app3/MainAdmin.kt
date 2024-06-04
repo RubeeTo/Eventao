@@ -18,19 +18,15 @@ class MainAdmin : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
                 R.id.btnHome -> {
-                    replaceFragment(HomeAdmin())
+                    replaceFragment(FragmentHome())
                     true
                 }
-                R.id.btnScan -> {
-                    replaceFragment(HomeAdmin())
-                    true
-                }
-//                R.id.btnEventList -> {
-//                    replaceFragment(HomeAdmin())
+//                R.id.btnScan -> {
+//                    replaceFragment(FragmentHome())
 //                    true
 //                }
                 R.id.btnAddEvent -> {
-                    replaceFragment(HomeAdmin())
+                    replaceFragment(FragmentCreateEvent())
                     true
                 }
 
@@ -40,7 +36,7 @@ class MainAdmin : AppCompatActivity() {
 
         // Define o fragmento inicial
         if (savedInstanceState == null) {
-            replaceFragment(HomeAdmin())
+            replaceFragment(FragmentHome())
         }
     }
 

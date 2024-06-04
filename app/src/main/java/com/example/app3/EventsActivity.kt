@@ -3,10 +3,7 @@ package com.example.app3
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.database.*
 
 class EventsActivity : AppCompatActivity() {
 
@@ -27,19 +24,19 @@ class EventsActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId) {
                 R.id.btnHome -> {
-                    replaceFragment(HomeAdmin())
+                    replaceFragment(FragmentHome())
                     true
                 }
                 R.id.btnScan -> {
-                    replaceFragment(HomeAdmin())
+                    replaceFragment(FragmentHome())
                     true
                 }
 //                R.id.btnEventList -> {
-//                    replaceFragment(HomeAdmin())
+//                    replaceFragment(FragmentHome())
 //                    true
 //                }
                 R.id.btnAddEvent -> {
-                    replaceFragment(HomeAdmin())
+                    replaceFragment(FragmentHome())
                     true
                 }
 
@@ -79,10 +76,6 @@ class EventsActivity : AppCompatActivity() {
 //                // Handle database error
 //            }
 //        })
-
-
-
-
 
     }
 
