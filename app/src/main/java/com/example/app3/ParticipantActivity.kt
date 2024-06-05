@@ -20,7 +20,6 @@ class ParticipantActivity : AppCompatActivity() {
         setContentView(R.layout.activity_participants)
 
         val toolbar = findViewById<Toolbar>(R.id.header)
-
         setSupportActionBar(toolbar)
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
@@ -32,13 +31,6 @@ class ParticipantActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-        fun onBackPressed() {
-            super.onBackPressed()
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-        }
-
-        toolbar.setNavigationOnClickListener { onBackPressed() }
 
         recyclerView = findViewById(R.id.recyclerViewParticipants)
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -78,6 +70,7 @@ class ParticipantActivity : AppCompatActivity() {
         val id: String = "",
         val name: String = "",
         val email: String = "",
-        val cpf: String = ""
+        val cpf: String = "",
+        val status: String = ""
     )
 }
