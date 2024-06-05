@@ -26,7 +26,7 @@
     <string name="txtQRCode">QRCode</string>
     <string name="txtAddEvent">Criar evento</string>
     <string name="txtMainEvent">Evento vigênte</string>
-    <string name="txtParticpantsEvent">Participantes do evento</string>
+    <string name="txtParticpantsEvent">Participantes inscritos</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

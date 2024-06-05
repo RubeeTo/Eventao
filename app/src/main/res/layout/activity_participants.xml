@@ -17,7 +17,7 @@
             android:background="@color/blue3"
             android:visibility="visible"
             app:navigationIcon="@drawable/back_arrow"
-            app:title="@string/txtMainEvent"
+            app:title="@string/txtParticpantsEvent"
             app:titleTextColor="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 

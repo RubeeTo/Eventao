@@ -21,6 +21,9 @@ class FragmentHome : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+
         val view = inflater.inflate(R.layout.activity_events, container, false)
 
         recyclerViewEvents = view.findViewById(R.id.recyclerViewEvents)

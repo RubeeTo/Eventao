@@ -33,9 +33,9 @@
         app:layout_constraintStart_toStartOf="@+id/cardEventView"
         app:layout_constraintTop_toBottomOf="@+id/cardEventView"
         android:layout_marginTop="10dp"
-        android:hint="Bacanau de Zeus"
+        android:hint="Nome do evento"
         android:textColor="@color/blue4"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
     <TextView
@@ -46,9 +46,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewEventName"
         android:drawableStart="@drawable/local_icon"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="25dp"
         android:drawablePadding="15dp"
-        android:hint="Mt. Olimpo"
+        android:hint="Local do evento"
         android:textSize="20dp"/>
 
     <TextView
@@ -58,9 +58,9 @@
         app:layout_constraintEnd_toEndOf="@+id/cardEventView"
         app:layout_constraintTop_toBottomOf="@+id/textViewLocalName"
         android:drawableStart="@drawable/hour_icon"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:drawablePadding="15dp"
-        android:hint="31 de Fev."
+        android:hint="Data do evento"
         android:textSize="20dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
