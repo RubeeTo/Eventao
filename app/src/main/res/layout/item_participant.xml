@@ -38,7 +38,7 @@
                 android:id="@+id/textViewParticipantEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nome do Participante"
+                android:text="Email do Participante"
                 android:textSize="20sp" />
 
             <TextView
@@ -49,10 +49,10 @@
                 android:textSize="14sp" />
 
             <TextView
-
+                android:id="@+id/textViewParticipantStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Status de autenticação"
+                android:text="Status"
                 android:textSize="14sp" />
 
         </LinearLayout>
