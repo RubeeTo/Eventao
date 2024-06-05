@@ -79,6 +79,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+                                                <entry key="imagePath" value="B:\User Rub\Estudo\FATEC\Desenvolvimento de Software Multiplataforma\4º Semestre\3 Programação para Dispositivos Móveis I\Trabalho\App QR Code\Vetores\enetao_branco_icon.svg" />
+                                                <entry key="scalingPercent" value="42" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -106,6 +108,12 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="42a0f1" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -297,11 +305,6 @@
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="LAUNCHER_LEGACY" />
                           </map>
                         </option>
                       </PersistentState>
