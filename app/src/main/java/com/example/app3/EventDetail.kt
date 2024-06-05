@@ -41,7 +41,7 @@ class EventDetail : AppCompatActivity() {
         }
 
         toolbar.setNavigationOnClickListener {
-            val intent = Intent(this, LoginClient::class.java)
+            val intent = Intent(this, EventsActivity::class.java)
             startActivity(intent)
             finish()
         }
