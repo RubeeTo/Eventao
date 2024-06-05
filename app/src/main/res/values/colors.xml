@@ -23,10 +23,8 @@
 
     <color name="black1">#120D26</color>
 
-
-    <color name="test1">#E52525</color>
-    <color name="test2">#63E525</color>
-    <color name="green">#44FF00</color>
-    <color name="red">#FF1100</color>
+    <color name="confirmed">#0BCFB8</color>
+    <color name="refuse">#BC2121</color>
+    <color name="problem">#E2CF1E</color>
 
 </resources>

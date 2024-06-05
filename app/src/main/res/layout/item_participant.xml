@@ -52,7 +52,7 @@
                 android:id="@+id/textViewParticipantStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Status"
+                android:text="Não autenticado"
                 android:textSize="14sp" />
 
         </LinearLayout>

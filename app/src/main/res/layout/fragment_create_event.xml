@@ -20,8 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/blue3"
-
-            app:navigationIcon="@drawable/exit_icon"
             app:title="@string/txtAddEvent"
             app:titleTextColor="@color/white" />
 
