@@ -2,6 +2,7 @@ package com.example.app3
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -45,7 +46,7 @@ class RegisterClient : AppCompatActivity() {
         toolbar.setNavigationOnClickListener { onBackPressed() }
 
         buttonRegister.setOnClickListener {
-            val email = editTextEmail.text.toString()
+            val email = editTextEmail.text.toString().trim().lowercase()
             val password = editTextPassword.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
@@ -64,6 +65,7 @@ class RegisterClient : AppCompatActivity() {
                                 )
                                 userRef.setValue(user).addOnCompleteListener { userTask ->
                                     if (userTask.isSuccessful) {
+                                        Log.d("Login", "UID autenticado: ${currentUser?.uid}")
                                         Toast.makeText(this, "User registered successfully!", Toast.LENGTH_SHORT).show()
                                         val intent = Intent(this, EventsActivity::class.java)
                                         startActivity(intent)

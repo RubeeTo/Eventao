@@ -3,6 +3,7 @@ package com.example.app3
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
@@ -29,7 +30,7 @@ class LoginClient : AppCompatActivity() {
         val buttonAdminAcess = findViewById<ImageView>(R.id.adminAcess)
 
         buttonLogin.setOnClickListener {
-            val email = editTextEmail.text.toString()
+            val email = editTextEmail.text.toString().trim().lowercase()
             val password = editTextPassword.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
@@ -47,8 +48,12 @@ class LoginClient : AppCompatActivity() {
                                     } else {
                                         Toast.makeText(this, "Usuário não encontrado no banco de dados.", Toast.LENGTH_SHORT).show()
                                     }
+
+                                Log.d("Login", "Existe no Realtime Database: ${userTask.result.exists()}")
+
                                 }
                             }
+                        Log.d("Login", "UID autenticado: ${currentUser?.uid}")
                         } else {
                             Toast.makeText(this, "Email ou senha incorretos.", Toast.LENGTH_SHORT).show()
                         }

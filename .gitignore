@@ -1,0 +1,23 @@
+# Android Studio
+.idea/
+*.iml
+
+# Sistema de build
+.gradle/
+build/
+**/build/
+.local/
+*.lock
+*.tmp/
+*.log
+
+# Kotlin DSL cache temporário
+.tmp/
+
+# Configs locais
+local.properties
+
+# Arquivo de config Firebase (deixe só no local)
+app/google-services.json
+
+/material

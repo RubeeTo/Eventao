@@ -70,11 +70,13 @@ class FragmentCreateEvent : Fragment() {
 
                         database.child(eventId).setValue(event).addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                Toast.makeText(requireContext(), "Event added successfully", Toast.LENGTH_SHORT).show()
-                                // Navigate back or clear fields
+                                android.util.Log.d("CreateEvent", "Evento criado com sucesso: $eventId")
+                                Toast.makeText(requireContext(), "Evento criado com sucesso", Toast.LENGTH_SHORT).show()
                                 requireActivity().supportFragmentManager.popBackStack()
                             } else {
-                                Toast.makeText(requireContext(), "Failed to add event", Toast.LENGTH_SHORT).show()
+                                val erro = task.exception?.message ?: "erro desconhecido"
+                                android.util.Log.e("CreateEvent", "Erro ao salvar evento: $erro")
+                                Toast.makeText(requireContext(), "Erro ao salvar evento: $erro", Toast.LENGTH_LONG).show()
                             }
                         }
                     } else {

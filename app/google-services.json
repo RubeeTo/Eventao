@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "259507205730",
-    "project_id": "app3-b8e90",
-    "storage_bucket": "app3-b8e90.appspot.com"
+    "project_number": "815694753449",
+    "project_id": "eventao-4749e",
+    "storage_bucket": "eventao-4749e.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:259507205730:android:d877d5acedebdf5adf833b",
+        "mobilesdk_app_id": "1:815694753449:android:8640daa6c9aecdd71a83b8",
         "android_client_info": {
           "package_name": "com.example.app3"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCtOoxp0Ro52Riu9fgZhxD_R9ZW127O2mk"
+          "current_key": "AIzaSyAGm8LJWlq56VBq62Nq08MtEM2ZG4CTm2I"
         }
       ],
       "services": {
